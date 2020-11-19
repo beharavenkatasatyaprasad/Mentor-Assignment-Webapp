@@ -197,14 +197,18 @@ const mentors = [];
 async function getMentors() {
     const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
     const response = await res.json();
-    mentors.push(response);    
+    response.forEach(mentor => {
+        mentors.push(mentor);    
+    })  
 }
 getMentors();
 
 async function getStudents() {
     const res = await fetch('https://mentorassignment.herokuapp.com/student');
     const response = await res.json();
-    students.push(response);    
+    response.forEach(student => {
+        students.push(student);    
+    })
 }
 getStudents();
 
@@ -239,6 +243,8 @@ function AssignMentor(){
         const Assigncol = document.createElement('td')
         Assigncol.className = 'align-middle';
         const AssignBtn = document.createElement('button');
+        AssignBtn.type = 'button';
+        AssignBtn.className = 'btn btn-primary btn-sm'
         AssignBtn.innerHTML = 'Add Student to ' + mentor.name;
         Assigncol.appendChild(AssignBtn);
         mentorRow.appendChild(Assigncol);
