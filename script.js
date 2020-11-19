@@ -261,10 +261,10 @@ function AssignMentor(){
             const SelectGroup = document.getElementById('selectGroup');
             SelectGroup.style.display = 'block'
             SelectGroup.classList.add('fade-in')
-            const SelectedMentorName = document.getElementById('SelectedMentorName');
+            const SelectedMentorName = document.getElementById('SelectedMentor');
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
-            listStudentsToSelect()
+            
         })
     })
 }
@@ -280,3 +280,4 @@ function listStudentsToSelect(){
         select.appendChild(option);
     })
 }
+listStudentsToSelect()
