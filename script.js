@@ -273,10 +273,10 @@ function AssignMentor(){
 function listStudentsToSelect(){
 //    select.innerHTML = ''
     console.log(students)
-    // students.forEach(student=>{
-    //     const option = document.createElement("option");
-    //     option.value = student.name;
-    //     option.innerHTML = student.name;
-    //     select.appendChild(option);
-    // })
+    students.forEach(student=>{
+        const option = document.createElement("option");
+        option.value = student.name;
+        option.innerHTML = student.name;
+        select.appendChild(option);
+    })
 }
