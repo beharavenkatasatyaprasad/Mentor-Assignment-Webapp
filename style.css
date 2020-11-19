@@ -172,7 +172,6 @@ select{
 }
 
 #selectbtn:hover{
-    text-transform: ca;
     background-color:  hsla(210, 10%, 23%, 0.664);
     letter-spacing: 5px !important;
 }
