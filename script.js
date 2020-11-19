@@ -279,7 +279,7 @@ function selectedStudents_(){
             mentor: selectedmentor,
             studentName: selectedPeople.value
         }
-        await fetch('https://student-mentor-assign-backend.herokuapp.com/mentor/addStudent', {
+        await fetch('https://mentorassignment.herokuapp.com/mentor/assignStudent', {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {
