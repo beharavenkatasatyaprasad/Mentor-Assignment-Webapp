@@ -276,9 +276,9 @@ function listStudentsToSelect(){
     const select = document.getElementById("selectedStudents");
     select.innerHTML = ''
     students.forEach(student=>{
-        const option = document.createElement("option");
-        option.value = student.name;
-        option.innerHTML = student.name;
-        select.appendChild(option);
+        select.innerHTML = `
+        <select value="${student.name}" >
+            ${student.name}
+        </select>`
     })
 }
