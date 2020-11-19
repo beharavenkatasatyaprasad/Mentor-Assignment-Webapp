@@ -16,7 +16,7 @@ function createMentorbtn(){
     AssignMentorsButton.classList.remove('active');
     ChangeMentorbtn.classList.remove('active')
     ChangeMentorField.style.display = 'none';
-    ChangeMentorField.style.display = 'none';
+    AssignMentorsField.style.display = 'none';
     WelcomePage.style.display = 'none';
     addstudentFields.style.display = 'none';
 
@@ -48,7 +48,7 @@ function assignMentorBtn(){
     
     AssignMentorsButton.classList.add('active');
     AssignMentorsField.style.display = 'block';
-    AssignStudents()
+    AssignMentor()
 }
 
 function ChangeMentorBtn(){
@@ -206,6 +206,8 @@ async function getStudents() {
     const response = await res.json();
     students.push(response);    
 }
+getStudents();
+
 console.log(students)
 console.log(mentors)
 
@@ -218,5 +220,28 @@ function selectedStudents_(){
         } 
     }
     console.log(selectedStudents);
-    document.getElementById('selectGroupForm').reset()
+    document.getElementById('selectGroupForm').reset();
+}
+
+function AssignMentor(){
+    const MentorsTable = document.getElementById('MentorsTable');
+    MentorsTable.innerHTML = '';
+    mentors.forEach(mentor=>{
+        const mentorRow = document.createElement('tr');
+        const mentorid = document.createElement('td')
+        mentorid.className = 'align-middle';
+        mentorid.innerHTML = mentor.id
+        mentorRow.appendChild(mentorid);
+        const mentorName = document.createElement('td')
+        mentorName.className = 'align-middle';
+        mentorName.innerHTML = mentor.name
+        mentorRow.appendChild(mentorName);
+        const Assigncol = document.createElement('td')
+        Assigncol.className = 'align-middle';
+        const AssignBtn = document.createElement('button');
+        AssignBtn.innerHTML = 'Add Student to ' + mentor.name;
+        Assigncol.appendChild(Assigncol);
+        mentorRow.appendChild(mentorName);
+        MentorsTable.appendChild(mentorRow);
+    });
 }
