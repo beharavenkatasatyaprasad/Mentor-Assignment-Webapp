@@ -219,7 +219,7 @@ getStudents();
 
 console.log(students)
 console.log(mentors)
-const selectedPeople = document.getElementById("selectedPeople");
+const selectedStudentName = document.getElementById("selectedStudentName");
 
 
 function AssignMentor(){
@@ -267,26 +267,70 @@ function listStudentsToSelect(){
             const option = document.createElement("option");
             option.value = student.name;
             option.innerHTML = student.name;
-            selectedPeople.appendChild(option);
+            selectedStudentName.appendChild(option);
         }
     })
 }
 
+async function putStudents() {
+    let data = {
+        mentor: selectedmentor,
+        studentName: selectedStudentName.value
+    }
+    await fetch('https://mentorassignment.herokuapp.com/mentor/assignStudent', {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    console.log('success')
+}
 
 function selectedStudents_(){
-    async function putStudents() {
-        let data = {
-            mentor: selectedmentor,
-            studentName: selectedPeople.value
-        }
-        await fetch('https://mentorassignment.herokuapp.com/mentor/assignStudent', {
-            method: 'PUT',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+    const Form = document.getElementById('selectGroupForm');
+    const message = document.getElementById('message3');
+    if(selectedStudentName.value === 'default'){ 
+        message.innerHTML = "";
+        const alertmsg = document.createElement('div');
+        const closebtn = document.createElement('button');
+        closebtn.type = 'button';
+        closebtn.className = 'close';
+        closebtn.setAttribute('data-dismiss','alert');
+        closebtn.setAttribute('aria-label','Close');
+        const span = document.createElement('span');
+        span.setAttribute('aria-hidde','true');
+        span.innerHTML = '&times;'
+        closebtn.appendChild(span);
+        alertmsg.className = 'alert alert-danger alert-dismissible fade fade-in show'
+        alertmsg.innerHTML = 'Please Select A Student !!!';
+        alertmsg.appendChild(closebtn);
+        message.appendChild(alertmsg);
+
+    }else{
+        putStudents();
+        message.innerHTML = "";
+        const successmsg = document.createElement('div');
+        const closebtn = document.createElement('button');
+        closebtn.type = 'button';
+        closebtn.className = 'close';
+        closebtn.setAttribute('data-dismiss','alert');
+        closebtn.setAttribute('aria-label','Close');
+        const span = document.createElement('span');
+        span.setAttribute('aria-hidden','true');
+        span.innerHTML = '&times;'
+        closebtn.appendChild(span);
+        successmsg.className = 'alert alert-success alert-dismissible fade fade-in show'
+        successmsg.innerHTML = 'Data Added Successfully..';
+        successmsg.appendChild(closebtn);
+        message.appendChild(successmsg);
+        console.log(data);
+        Form.reset();
     }
-    putStudents()
-    console.log('success')
+    
+
+
+
+    
+
 }
