@@ -219,10 +219,12 @@ getStudents();
 
 console.log(students)
 console.log(mentors)
+const select = document.getElementById("selectedStudents");
 
 function selectedStudents_(){
+    
     selectedStudents.length = 0;
-    const select = document.getElementById("selectedStudents"); 
+     
     for (i = 0; i < select.length; i++) {
         if(select.options[i].selected === true){
             selectedStudents.push(select.options[i].value)
@@ -254,12 +256,29 @@ function AssignMentor(){
         Assigncol.appendChild(AssignBtn);
         mentorRow.appendChild(Assigncol);
         MentorsTable.appendChild(mentorRow);
+
         AssignBtn.addEventListener('click',()=>{
             const SelectGroup = document.getElementById('selectGroup');
             SelectGroup.style.display = 'block'
+            SelectGroup.classList.add('fade-in')
             const SelectedMentorName = document.getElementById('SelectedMentorName');
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
+            
         })
     })
 }
+
+
+function listStudentsToSelect(){
+   select.innerHTML = ''
+    students.forEach(student=>{
+        const option = document.createElement("option");
+        option.value = student.name;
+        option.innerHTML = student.name;
+        select.appendChild(option);
+    })
+
+}
+
+listStudentsToSelect()
