@@ -221,18 +221,6 @@ console.log(students)
 console.log(mentors)
 const selectedPeople = document.getElementById("selectedPeople");
 
-function selectedStudents_(){
-    
-    // selectedStudents.length = 0;
-     
-    // for (i = 0; i < select.length; i++) {
-    //     if(select.options[i].selected === true){
-    //         selectedStudents.push(select.options[i].value)
-    //     } 
-    // }
-    console.log(selectedPeople.value);
-    // document.getElementById('selectGroupForm').reset();
-}
 
 function AssignMentor(){
     const MentorsTable = document.getElementById('MentorsTable');
@@ -282,4 +270,23 @@ function listStudentsToSelect(){
             selectedPeople.appendChild(option);
         }
     })
+}
+
+
+function selectedStudents_(){
+    async function assignStudents() {
+        let data = {
+            mentor: selectedmentor,
+            studentName: selectedPeople.value
+        }
+        await fetch('https://student-mentor-assign-backend.herokuapp.com/mentor/addStudent', {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+    await assignStudents()
+    console.log('success')
 }
