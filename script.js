@@ -190,10 +190,10 @@ async function createStudent() {
     }  
 }
 
-const selectedStudents = [];
+// const selectedStudents = [];
 const students = [];
 const mentors = [];
-
+let selectedmentor;
 
 
 async function getMentors() {
@@ -264,6 +264,7 @@ function AssignMentor(){
             const SelectedMentorName = document.getElementById('SelectedMentor');
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
+            selectedmentor = mentor.name;
             listStudentsToSelect()
         })
     })
@@ -274,9 +275,11 @@ function listStudentsToSelect(){
 //    select.innerHTML = ''
     console.log(students)
     students.forEach(student=>{
-        const option = document.createElement("option");
-        option.value = student.name;
-        option.innerHTML = student.name;
-        selectedPeople.appendChild(option);
+        if(student.mentorAssigned === false){
+            const option = document.createElement("option");
+            option.value = student.name;
+            option.innerHTML = student.name;
+            selectedPeople.appendChild(option);
+        }
     })
 }
