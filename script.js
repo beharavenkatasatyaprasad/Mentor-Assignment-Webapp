@@ -1,65 +1,67 @@
 const CreateMentorButton = document.getElementById('Mentorbtn');
 const CreateStudentButton = document.getElementById('Studentbtn');
-const listStudentsButton = document.getElementById('listStudentsbtn');
 const AssignMentorsButton = document.getElementById('assignMentorbtn');
+const ChangeMentorbtn = document.getElementById('ChangeMentorbtn');
 
 
 const WelcomePage = document.getElementById('welcomepage');
 const addmentorFields = document.getElementById('addmentor');
 const addstudentFields = document.getElementById('addstudent')
-const listStudents = document.getElementById('listStudents');
-const AssignMentors = document.getElementById('AssignMentors');
+const AssignMentorsField = document.getElementById('AssignMentorsField');
+const ChangeMentorField = document.getElementById('ChangeMentorField');
 
 
 function createMentorbtn(){ 
     CreateStudentButton.classList.remove('active');
-    listStudentsButton.classList.remove('active');
-    AssignMentorsButton.classList.remove('active')
-    AssignMentors.style.display = 'none';
-    listStudents.style.display = 'none';
+    AssignMentorsButton.classList.remove('active');
+    ChangeMentorbtn.classList.remove('active')
+    ChangeMentorField.style.display = 'none';
+    ChangeMentorField.style.display = 'none';
     WelcomePage.style.display = 'none';
     addstudentFields.style.display = 'none';
+
     CreateMentorButton.classList.add('active');
     addmentorFields.style.display = 'block';
 }
 
 function createStudentbtn(){
     CreateMentorButton.classList.remove('active');
-    listStudentsButton.classList.remove('active');
-    AssignMentorsButton.classList.remove('active')
-    AssignMentors.style.display = 'none';
+    AssignMentorsButton.classList.remove('active');
+    ChangeMentorbtn.classList.remove('active')
+    ChangeMentorField.style.display = 'none';
     WelcomePage.style.display = 'none';
-    listStudents.style.display = 'none';
+    AssignMentorsField.style.display = 'none';
     addmentorFields.style.display = 'none';
 
     CreateStudentButton.classList.add('active');
     addstudentFields.style.display = 'block';
 }
 
-function listStudentsbtn(){
+function assignMentorBtn(){
     CreateMentorButton.classList.remove('active');
     CreateStudentButton.classList.remove('active');
-    AssignMentorsButton.classList.remove('active')
-    AssignMentors.style.display = 'none';
+    ChangeMentorbtn.classList.remove('active')
+    ChangeMentorField.style.display = 'none';
     WelcomePage.style.display = 'none';
     addstudentFields.style.display = 'none';
     addmentorFields.style.display = 'none';
     
-    listStudentsButton.classList.add('active');
-    listStudents.style.display = 'block';
+    AssignMentorsButton.classList.add('active');
+    AssignMentorsField.style.display = 'block';
+    AssignStudents()
 }
 
-function listMentorbtn(){
+function ChangeMentorBtn(){
     CreateMentorButton.classList.remove('active');
     CreateStudentButton.classList.remove('active');
-    listStudentsButton.classList.remove('active');
+    AssignMentorsButton.classList.remove('active');
     WelcomePage.style.display = 'none';
     addstudentFields.style.display = 'none';
     addmentorFields.style.display = 'none';
-    listStudents.style.display = 'none';
+    AssignMentorsField.style.display = 'none';
 
-    AssignMentorsButton.classList.add('active')
-    AssignMentors.style.display = 'block';
+    ChangeMentorbtn.classList.add('active')
+    ChangeMentorField.style.display = 'block';
 }
 
 
@@ -188,4 +190,11 @@ async function createStudent() {
     }  
 }
 
-
+function AssignStudents(){  
+    async function getMentors() {
+        const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
+        const response = await res.json();
+        console.log(response);
+    }
+    getMentors();
+}

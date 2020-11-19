@@ -24,10 +24,10 @@
                     <button type="button" onclick="createStudentbtn()" id="Studentbtn" class="nav-buttons btn btn-md btn-block btn-secondary">Create Student</button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" onclick="listStudentsbtn()" id="listStudentsbtn" class="nav-buttons btn btn-md btn-block btn-secondary">List Students</button>
+                    <button type="button" onclick="assignMentorBtn()" id="assignMentorbtn" class="nav-buttons btn btn-md btn-block btn-secondary">Assign Mentor</button>
                 </li>
                 <li class="nav-item">
-                    <button  type="button" onclick="listMentorbtn()" id="assignMentorbtn" class="nav-buttons btn btn-md btn-block btn-secondary">List/Assign Mentors</button>
+                    <button  type="button" onclick="ChangeMentorBtn()" id="ChangeMentorbtn" class="nav-buttons btn btn-md btn-block btn-secondary">Change Mentor</button>
                 </li>
             </ul>
         </div>  
@@ -48,10 +48,10 @@
                               <button type="button" onclick="createStudentbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create Student</button>  
                           </div>
                           <div class="form-group">     
-                              <button type="button" onclick="listStudentsbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">List Students</button>  
+                              <button type="button" onclick="assignMentorBtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Assign Mentor</button>  
                           </div>
                           <div class="form-group">     
-                              <button type="button" onclick="listMentorbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">List/Assign Mentors</button>  
+                              <button type="button" onclick="ChangeMentorBtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Change Mentor</button>  
                           </div>
                       </form>
                     </div>   
@@ -138,71 +138,67 @@
 
             </div>
         </div>
-        <div id="listStudents" class="fade-in" style="display: none;">
-            <div class="input-container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;"> 
-                <table class="table table-hover table-dark">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
+        <div id="AssignMentorsField" class="fade-in table-responsive" style="display: none;">
+            <table class="table table-hover text-center table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Mentor ID</th>
+                    <th scope="col">Mentor Name</th>
+                    <th scope="col">Select Students</th>
+                    <th scope="col">Assign</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Mark</td>
+                    <td class="align-middle">Otto</td>
+                    <td class="align-middle">
+                        <select multiple class="form-control" id="exampleFormControlSelect2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </td>
+                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm">Proceed</button></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Jacob</td>
+                    <td class="align-middle">Thornton</td>
+                    <td class="align-middle">
+                        <select multiple class="form-control" id="exampleFormControlSelect2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </td>
+                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm">Proceed</button></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">arry the Bird</td>
+                    <td class="align-middle">Larry the Bird</td>
+                    <td class="align-middle">
+                        <select multiple class="form-control" id="exampleFormControlSelect2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </td>
+                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm ">Proceed</button></td>
+                  </tr>
+                </tbody>
+              </table>                
+            
+                    
+
         </div>
-        <div id="AssignMentors" class="fade-in" style="display: none;">
-            <div class="input-container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;"> 
-                <table class="table table-hover table-dark">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
+        <div id="ChangeMentorField" class="fade-in" style="display: none;">
+            
         </div>
     </div>
     <script src="script.js"></script>
