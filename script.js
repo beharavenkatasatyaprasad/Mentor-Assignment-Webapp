@@ -219,22 +219,20 @@ getStudents();
 
 console.log(students)
 console.log(mentors)
-listStudentsToSelect()
+const select = document.getElementById("selectedStudents");
 
-
-
-// function selectedStudents_(){
+function selectedStudents_(){
     
-//     selectedStudents.length = 0;
+    selectedStudents.length = 0;
      
-//     for (i = 0; i < select.length; i++) {
-//         if(select.options[i].selected === true){
-//             selectedStudents.push(select.options[i].value)
-//         } 
-//     }
-//     console.log(selectedStudents);
-//     document.getElementById('selectGroupForm').reset();
-// }
+    for (i = 0; i < select.length; i++) {
+        if(select.options[i].selected === true){
+            selectedStudents.push(select.options[i].value)
+        } 
+    }
+    console.log(selectedStudents);
+    document.getElementById('selectGroupForm').reset();
+}
 
 function AssignMentor(){
     const MentorsTable = document.getElementById('MentorsTable');
@@ -266,19 +264,19 @@ function AssignMentor(){
             const SelectedMentorName = document.getElementById('SelectedMentorName');
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
-            
+            listStudentsToSelect()
         })
     })
 }
 
 
 function listStudentsToSelect(){
-    const select = document.getElementById("selectedStudents");
-    select.innerHTML = ''
-    students.forEach(student=>{
-        select.innerHTML = `
-        <select value="${student.name}" >
-            ${student.name}
-        </select>`
-    })
+//    select.innerHTML = ''
+    console.log(students)
+    // students.forEach(student=>{
+    //     const option = document.createElement("option");
+    //     option.value = student.name;
+    //     option.innerHTML = student.name;
+    //     select.appendChild(option);
+    // })
 }
