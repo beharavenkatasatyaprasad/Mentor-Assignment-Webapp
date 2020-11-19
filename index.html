@@ -65,10 +65,10 @@
                   <h2>Create Mentor</h2>
               </div>
                 <div class="input-body">
-                    <form id="mentorForm" onsubmit="createMentor()" autocomplete="off">
+                    <form id="mentorForm" autocomplete="off">
                         <div class="form-group">
                             <div class="pos-r">                                        
-                                <input   id="MentorId" type="number" name="mentorid" placeholder="Mentor ID Number..." class="form-mentorid form-control" >
+                                <input id="MentorId" type="number" name="mentorid" placeholder="Mentor ID Number..." class="form-mentorid form-control" >
                                 <i class="fa fa-id-card"></i>
                             </div>
                         </div>
@@ -80,12 +80,12 @@
                         </div>
                         <div class="form-group">
                             <div class="pos-r">                                    
-                                <input id="MentorContact" type="tel" name="ContactNumber" placeholder="Contact Number..." class="form-ContactNumber form-control" >
+                                <input id="MentorContact" type="tel" name="ContactNumber" placeholder="Contact Number..." maxlength="10" class="form-ContactNumber form-control" >
                                 <i class="fa fa-phone"></i>                                       
                             </div>
                         </div>
                         <div class="form-group">     
-                            <button type="submit" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
+                            <button type="button" onclick="createMentor()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
                         </div>
                     </form>
                   </div>   
@@ -123,7 +123,7 @@
                         </div>
                         <div class="form-group">
                             <div class="pos-r">                                    
-                                <input id="StudentContact" type="tel" name="ContactNumber" placeholder="Contact Number..." class="form-ContactNumber form-control">
+                                <input id="StudentContact" type="tel" name="ContactNumber" placeholder="Contact Number..." class="form-ContactNumber form-control" maxlength="10">
                                 <i class="fa fa-phone"></i>                                       
                             </div>
                         </div>
