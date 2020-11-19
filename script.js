@@ -96,7 +96,7 @@ async function createMentor() {
             contact: MentorContact,
             students: []
         };
-        await fetch("http://localhost:3000/mentor", {
+        await fetch("https://mentorassignment.herokuapp.com/mentor", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -161,7 +161,7 @@ async function createStudent() {
             mentorAssigned: false,
             mentorName: "Not Assigned"
         };
-        await fetch("http://localhost:3000/student", {
+        await fetch("https://mentorassignment.herokuapp.com/student", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
