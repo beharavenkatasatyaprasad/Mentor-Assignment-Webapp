@@ -266,7 +266,7 @@ function AssignMentor(){
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
             selectedMentor = `${mentor.name}`;
-            listStudentsToSelect()
+
         })
     })
 }
@@ -284,6 +284,7 @@ function listStudentsToSelect(){
         }
     })
 }
+listStudentsToSelect()
 
 async function assignStudents() {
     let data = {
