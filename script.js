@@ -324,7 +324,6 @@ function selectedStudents_(){
         successmsg.innerHTML = 'Data Added Successfully..';
         successmsg.appendChild(closebtn);
         message.appendChild(successmsg);
-        console.log(data);
         Form.reset();
     }
     
