@@ -193,7 +193,7 @@ async function createStudent() {
 const selectedStudents = [];
 const students = [];
 const mentors = [];
-const selectedMentor
+let selectedMentor
 
 
 async function getMentors() {
