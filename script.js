@@ -219,19 +219,19 @@ getStudents();
 
 console.log(students)
 console.log(mentors)
-const select = document.getElementById("selectedStudents");
+const selectedPeople = document.getElementById("selectedPeople");
 
 function selectedStudents_(){
     
-    selectedStudents.length = 0;
+    // selectedStudents.length = 0;
      
-    for (i = 0; i < select.length; i++) {
-        if(select.options[i].selected === true){
-            selectedStudents.push(select.options[i].value)
-        } 
-    }
-    console.log(selectedStudents);
-    document.getElementById('selectGroupForm').reset();
+    // for (i = 0; i < select.length; i++) {
+    //     if(select.options[i].selected === true){
+    //         selectedStudents.push(select.options[i].value)
+    //     } 
+    // }
+    console.log(selectedPeople.value);
+    // document.getElementById('selectGroupForm').reset();
 }
 
 function AssignMentor(){
@@ -264,7 +264,7 @@ function AssignMentor(){
             const SelectedMentorName = document.getElementById('SelectedMentor');
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
-            
+            listStudentsToSelect()
         })
     })
 }
@@ -277,7 +277,6 @@ function listStudentsToSelect(){
         const option = document.createElement("option");
         option.value = student.name;
         option.innerHTML = student.name;
-        select.appendChild(option);
+        selectedPeople.appendChild(option);
     })
 }
-listStudentsToSelect()
