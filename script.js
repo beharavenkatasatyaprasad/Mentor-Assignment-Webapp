@@ -193,7 +193,7 @@ async function createStudent() {
 // const selectedStudents = [];
 const students = [];
 const mentors = [];
-let selectedmentor;
+let selectedmentor
 
 
 async function getMentors() {
@@ -274,7 +274,7 @@ function listStudentsToSelect(){
 
 
 function selectedStudents_(){
-    async function assignStudents() {
+    async function putStudents() {
         let data = {
             mentor: selectedmentor,
             studentName: selectedPeople.value
@@ -287,6 +287,6 @@ function selectedStudents_(){
             }
         });
     }
-    await assignStudents()
+    putStudents()
     console.log('success')
 }
