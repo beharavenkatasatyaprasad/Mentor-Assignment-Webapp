@@ -219,6 +219,8 @@ getStudents();
 
 console.log(students)
 console.log(mentors)
+listStudentsToSelect()
+
 const select = document.getElementById("selectedStudents");
 
 function selectedStudents_(){
@@ -279,4 +281,3 @@ function listStudentsToSelect(){
         select.appendChild(option);
     })
 }
-listStudentsToSelect()
