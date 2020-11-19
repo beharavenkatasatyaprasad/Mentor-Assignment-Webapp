@@ -93,8 +93,8 @@ async function createMentor() {
 
     else{
         let data = {
-            id: MentorName,
-            name: MentorId,
+            id: MentorId,
+            name: MentorName,
             contact: MentorContact,
             students: []
         };
