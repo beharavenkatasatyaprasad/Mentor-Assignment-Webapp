@@ -38,6 +38,7 @@ function createStudentbtn(){
 }
 
 function assignMentorBtn(){
+    refresh_Data();
     CreateMentorButton.classList.remove('active');
     CreateStudentButton.classList.remove('active');
     ChangeMentorbtn.classList.remove('active')
@@ -48,7 +49,7 @@ function assignMentorBtn(){
     
     AssignMentorsButton.classList.add('active');
     AssignMentorsField.style.display = 'block';
-    AssignMentor()
+    AssignMentor();
 }
 
 function ChangeMentorBtn(){
@@ -194,23 +195,30 @@ const selectedStudents = [];
 const students = [];
 const mentors = [];
 
-async function getMentors() {
-    const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
-    const response = await res.json();
-    response.forEach(mentor => {
-        mentors.push(mentor);    
-    })  
+function refresh_Data(){
+    async function getMentors() {
+        mentors.length=0;
+        const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
+        const response = await res.json();
+        response.forEach(mentor => {
+            mentors.push(mentor);    
+        })  
+    }
+    
+    getMentors();
+    
+    async function getStudents() {
+        students.length=0;
+        const res = await fetch('https://mentorassignment.herokuapp.com/student');
+        const response = await res.json();
+        response.forEach(student => {
+            students.push(student);    
+        })
+    }
+    getStudents();
 }
-getMentors();
 
-async function getStudents() {
-    const res = await fetch('https://mentorassignment.herokuapp.com/student');
-    const response = await res.json();
-    response.forEach(student => {
-        students.push(student);    
-    })
-}
-getStudents();
+
 
 console.log(students)
 console.log(mentors)
