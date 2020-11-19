@@ -254,5 +254,12 @@ function AssignMentor(){
         Assigncol.appendChild(AssignBtn);
         mentorRow.appendChild(Assigncol);
         MentorsTable.appendChild(mentorRow);
+        AssignBtn.addEventListener('click',()=>{
+            const SelectGroup = document.getElementById('selectGroup');
+            SelectGroup.style.display = 'block'
+            const SelectedMentorName = document.getElementById('SelectedMentorName');
+            SelectedMentorName.style.textTransform = 'capitalize';
+            SelectedMentorName.innerHTML =  mentor.name;
+        })
     })
 }
