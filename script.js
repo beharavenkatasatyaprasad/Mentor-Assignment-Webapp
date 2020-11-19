@@ -278,7 +278,5 @@ function listStudentsToSelect(){
         option.innerHTML = student.name;
         select.appendChild(option);
     })
-
 }
-
 listStudentsToSelect()
