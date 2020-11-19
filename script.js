@@ -221,20 +221,20 @@ console.log(students)
 console.log(mentors)
 listStudentsToSelect()
 
-const select = document.getElementById("selectedStudents");
 
-function selectedStudents_(){
+
+// function selectedStudents_(){
     
-    selectedStudents.length = 0;
+//     selectedStudents.length = 0;
      
-    for (i = 0; i < select.length; i++) {
-        if(select.options[i].selected === true){
-            selectedStudents.push(select.options[i].value)
-        } 
-    }
-    console.log(selectedStudents);
-    document.getElementById('selectGroupForm').reset();
-}
+//     for (i = 0; i < select.length; i++) {
+//         if(select.options[i].selected === true){
+//             selectedStudents.push(select.options[i].value)
+//         } 
+//     }
+//     console.log(selectedStudents);
+//     document.getElementById('selectGroupForm').reset();
+// }
 
 function AssignMentor(){
     const MentorsTable = document.getElementById('MentorsTable');
@@ -273,7 +273,8 @@ function AssignMentor(){
 
 
 function listStudentsToSelect(){
-   select.innerHTML = ''
+    const select = document.getElementById("selectedStudents");
+    select.innerHTML = ''
     students.forEach(student=>{
         const option = document.createElement("option");
         option.value = student.name;
