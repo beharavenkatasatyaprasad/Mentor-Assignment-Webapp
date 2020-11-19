@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Assignment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet">
+    <script src="https://use.fontawesome.com/d8a40b24d8.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar shadow navbar-expand-md" style="background-color:  rgb(203, 32, 45);">
+        <a class="navbar-brand" href="" style="color:rgb(255, 255, 255);">Mentor Assignment Page</a>
+        <button class="navbar-toggler" id="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav  text-center">
+                <li class="nav-item">
+                    <button type="button" onclick="createMentorbtn()" id="Mentorbtn" class="nav-buttons btn btn-md btn-block btn-secondary">Create Mentor</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" onclick="createStudentbtn()" id="Studentbtn" class="nav-buttons btn btn-md btn-block btn-secondary">Create Student</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" onclick="listStudentsbtn()" id="listStudentsbtn" class="nav-buttons btn btn-md btn-block btn-secondary">List Students</button>
+                </li>
+                <li class="nav-item">
+                    <button  type="button" onclick="listMentorbtn()" id="assignMentorbtn" class="nav-buttons btn btn-md btn-block btn-secondary">List/Assign Mentors</button>
+                </li>
+            </ul>
+        </div>  
+    </nav>
+    <div class="container" style="margin-top: 6%;">
+        <div id="welcomepage" class="justify-content-center" style="display: block;">
+            <div class="input-container col-lg-10 col-md-12 col-sm-12 col-xs-12" style="position: center center;"> 
+                <div class="input-content">
+                  <div class="input-header text-center"style=' overflow: hidden;'>
+                    <h2>Welcome To <br><span style="color: red; font-size: 2.5rem;">Mentor Assignment Page</span></h2>
+                </div>
+                  <div class="input-body">
+                      <form autocomplete="off">
+                          <div class="form-group">     
+                              <button type="button"  onclick="createMentorbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create Mentor</button>  
+                          </div>
+                          <div class="form-group">     
+                              <button type="button" onclick="createStudentbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create Student</button>  
+                          </div>
+                          <div class="form-group">     
+                              <button type="button" onclick="listStudentsbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">List Students</button>  
+                          </div>
+                          <div class="form-group">     
+                              <button type="button" onclick="listMentorbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">List/Assign Mentors</button>  
+                          </div>
+                      </form>
+                    </div>   
+                  </div>
+              </div>
+        </div>
+        <div id="addmentor" class="fade-in" style="display: none;">
+            <div class="input-container col-lg-8 col-md-12 col-sm-12 col-xs-12" style="position: center center;"> 
+              <div class="input-content">
+                <div class="input-header text-center">
+                  <h2>Create Mentor</h2>
+              </div>
+                <div class="input-body">
+                    <form id="mentorForm" autocomplete="off">
+                        <div class="form-group">
+                            <div class="pos-r">                                        
+                                <input   id="MentorId" type="number" name="mentorid" placeholder="Mentor ID Number..." class="form-mentorid form-control" >
+                                <i class="fa fa-id-card"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pos-r">                                    
+                                <input id="MentorName" type="text" name="MentorName" placeholder="Mentor Name..." class="form-MentorName form-control" >
+                                <i class="fa fa-user"></i>                                       
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pos-r">                                    
+                                <input id="MentorContact" type="tel" name="ContactNumber" placeholder="Contact Number..." class="form-ContactNumber form-control" >
+                                <i class="fa fa-phone"></i>                                       
+                            </div>
+                        </div>
+                        <div class="form-group">     
+                            <button type="button" onclick="createMentor()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
+                        </div>
+                    </form>
+                  </div>   
+                </div>
+            </div>
+            <div id="message1" class="message col-sm-12 m-5">
+
+            </div>
+        </div>
+        <div id="addstudent" class="fade-in" style="display: none;">
+            <div class="input-container col-lg-8 col-md-12 col-sm-12 col-xs-12" style="margin: auto;"> 
+              <div class="input-content">
+                <div class="input-header text-center">
+                  <h2>Create Student</h2>
+              </div>
+                <div class="input-body">
+                    <form autocomplete="off" id="Studentform">
+                        <div class="form-group">
+                            <div class="pos-r">                                        
+                                <input   id="studentId" type="number" name="studentId" placeholder="Student ID Number..." class="form-studentId form-control">
+                                <i class="fa fa-id-card"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pos-r">                                        
+                                <input   id="Batch" type="number" name="Batch" placeholder="Batch..." class="form-Batch form-control">
+                                <i class="fa fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pos-r">                                    
+                                <input id="StudentName" type="text" name="StudentName" placeholder="Student Name..." class="form-StudentName form-control">
+                                <i class="fa fa-user"></i>                                       
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pos-r">                                    
+                                <input id="StudentContact" type="tel" name="ContactNumber" placeholder="Contact Number..." class="form-ContactNumber form-control">
+                                <i class="fa fa-phone"></i>                                       
+                            </div>
+                        </div>
+                        <div class="form-group">     
+                            <button type="button" onclick="createStudent()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
+                        </div>
+                    </form>
+                  </div>   
+                </div>
+            </div>
+            <div id="message2" class="message col-sm-12 m-3">
+
+            </div>
+        </div>
+        <div id="listStudents" class="fade-in" style="display: none;">
+            <div class="input-container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;"> 
+                <table class="table table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div id="AssignMentors" class="fade-in" style="display: none;">
+            <div class="input-container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: auto;"> 
+                <table class="table table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
