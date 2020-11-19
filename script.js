@@ -193,7 +193,7 @@ async function createStudent() {
 const selectedStudents = [];
 const students = [];
 const mentors = [];
-let selectedMentor
+
 
 
 async function getMentors() {
@@ -232,7 +232,6 @@ function selectedStudents_(){
     }
     console.log(selectedStudents);
     document.getElementById('selectGroupForm').reset();
-    assignStudents()
 }
 
 function AssignMentor(){
@@ -265,7 +264,6 @@ function AssignMentor(){
             const SelectedMentorName = document.getElementById('SelectedMentorName');
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
-            selectedMentor = `${mentor.name}`;
             listStudentsToSelect()
         })
     })
@@ -276,25 +274,12 @@ function listStudentsToSelect(){
 //    select.innerHTML = ''
     console.log(students)
     students.forEach(student=>{
-        if(student.mentorAssigned === false){
+        if(element.mentorAssigned === false){
             const option = document.createElement("option");
             option.value = student.name;
             option.innerHTML = student.name;
             select.appendChild(option);
+
         }
     })
-}
-
-async function assignStudents() {
-    let data = {
-        mentor: selectedMentor,
-        studentName: selectedStudents
-    }
-    await fetch('https://mentorassignment.herokuapp.com/mentor/assignStudent', {
-        method: 'PUT',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
 }
