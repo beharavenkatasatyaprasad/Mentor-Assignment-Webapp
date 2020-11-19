@@ -22,7 +22,6 @@ function createMentorbtn(){
 
     CreateMentorButton.classList.add('active');
     addmentorFields.style.display = 'block';
-    Reload_Data()
 }
 
 function createStudentbtn(){
@@ -49,7 +48,6 @@ function assignMentorBtn(){
     
     AssignMentorsButton.classList.add('active');
     AssignMentorsField.style.display = 'block';
-    Reload_Data()
     AssignMentor()
 }
 
@@ -64,7 +62,6 @@ function ChangeMentorBtn(){
 
     ChangeMentorbtn.classList.add('active')
     ChangeMentorField.style.display = 'block';
-
 }
 
 
@@ -199,35 +196,29 @@ const mentors = [];
 
 
 
-
-
-
-const MentorsTable = document.getElementById('MentorsTable');
-
-function Reload_Data(){
-    async function getMentors() {
-        mentors.length=0;
-        const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
-        const response = await res.json();
-        response.forEach(mentor => {
-            mentors.push(mentor);    
-        })  
-    }
-    getMentors();
-    async function getStudents() {
-        students.length=0;
-        const res = await fetch('https://mentorassignment.herokuapp.com/student');
-        const response = await res.json();
-        response.forEach(student => {
-            students.push(student);    
-        })
-    }
-    getStudents();
-    
-    console.log(students)
-    console.log(mentors)
+async function getMentors() {
+    mentors.length=0;
+    const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
+    const response = await res.json();
+    response.forEach(mentor => {
+        mentors.push(mentor);    
+    })  
 }
 
+getMentors();
+
+async function getStudents() {
+    students.length=0;
+    const res = await fetch('https://mentorassignment.herokuapp.com/student');
+    const response = await res.json();
+    response.forEach(student => {
+        students.push(student);    
+    })
+}
+getStudents();
+
+console.log(students)
+console.log(mentors)
 
 function selectedStudents_(){
     selectedStudents.length = 0;
@@ -242,7 +233,7 @@ function selectedStudents_(){
 }
 
 function AssignMentor(){
-    
+    const MentorsTable = document.getElementById('MentorsTable');
     MentorsTable.innerHTML = '';
     mentors.forEach(mentor=>{
         const mentorRow = document.createElement('tr');
