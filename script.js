@@ -240,8 +240,8 @@ function AssignMentor(){
         Assigncol.className = 'align-middle';
         const AssignBtn = document.createElement('button');
         AssignBtn.innerHTML = 'Add Student to ' + mentor.name;
-        Assigncol.appendChild(Assigncol);
-        mentorRow.appendChild(mentorName);
+        Assigncol.appendChild(AssignBtn);
+        mentorRow.appendChild(Assigncol);
         MentorsTable.appendChild(mentorRow);
-    });
+    })
 }
