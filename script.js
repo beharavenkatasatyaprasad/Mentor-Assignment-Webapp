@@ -190,10 +190,10 @@ async function createStudent() {
     }  
 }
 
-const selectedStudents = [];
+// const selectedStudents = [];
 const students = [];
 const mentors = [];
-const selectedMentor
+let selectedMentor
 
 
 async function getMentors() {
@@ -219,21 +219,21 @@ getStudents();
 
 console.log(students)
 console.log(mentors)
-const select = document.getElementById("selectedStudents");
+const selectedStudents = document.getElementById("selectedStudents").value;
 
-function selectedStudents_(){
+// function selectedStudents_(){
     
-    selectedStudents.length = 0;
+//     selectedStudents.length = 0;
      
-    for (i = 0; i < select.length; i++) {
-        if(select.options[i].selected === true){
-            selectedStudents.push(select.options[i].value)
-        } 
-    }
-    console.log(selectedStudents);
-    document.getElementById('selectGroupForm').reset();
-    assignStudents()
-}
+//     for (i = 0; i < select.length; i++) {
+//         if(select.options[i].selected === true){
+//             selectedStudents.push(select.options[i].value)
+//         } 
+//     }
+//     console.log(selectedStudents);
+//     document.getElementById('selectGroupForm').reset();
+//     assignStudents()
+// }
 
 function AssignMentor(){
     const MentorsTable = document.getElementById('MentorsTable');
