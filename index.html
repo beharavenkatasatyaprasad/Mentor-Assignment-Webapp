@@ -138,64 +138,53 @@
 
             </div>
         </div>
-        <div id="AssignMentorsField" class="fade-in table-responsive" style="display: none;">
+        <div id="AssignMentorsField" class="col-sm-12 fade-in table-responsive" style="display: none;">
             <table class="table table-hover text-center table-dark">
                 <thead>
                   <tr>
                     <th scope="col">Mentor ID</th>
                     <th scope="col">Mentor Name</th>
-                    <th scope="col">Select Students</th>
-                    <th scope="col">Assign</th>
+                    <th scope="col">Add Student</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="align-middle">Mark</td>
                     <td class="align-middle">Otto</td>
-                    <td class="align-middle">
-                        <select multiple class="form-control" id="exampleFormControlSelect2">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </td>
-                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm">Proceed</button></td>
+                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm">Add Students to Name</button></td>
                   </tr>
                   <tr>
                     <td class="align-middle">Jacob</td>
                     <td class="align-middle">Thornton</td>
-                    <td class="align-middle">
-                        <select multiple class="form-control" id="exampleFormControlSelect2">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </td>
-                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm">Proceed</button></td>
+                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm">Add Students to Name</button></td>
                   </tr>
                   <tr>
                     <td class="align-middle">arry the Bird</td>
                     <td class="align-middle">Larry the Bird</td>
-                    <td class="align-middle">
-                        <select multiple class="form-control" id="exampleFormControlSelect2">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </td>
-                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm ">Proceed</button></td>
+                    <td class="align-middle"><button type="button" class="btn btn-primary btn-sm ">Add Students to Name</button></td>
                   </tr>
                 </tbody>
-              </table>                
-            
-                    
+            </table>
+            <div class="students col-sm-10 p-3" style="margin: auto; display: block;">
+                <div class="students-container col-sm-12">
+                    <div class="mentorname text-center">
+                        Select Students for <span style="color: red;">Satya</span>
+                    </div>
+                    <div  class="select-options col-sm-6" style="margin: auto;">
+                        <form id='selectGroupForm'>
+                            <select multiple class="form-control" id="selectedStudents">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </form> 
+                        <button id="selectbtn" type="button" onclick="selectedStudents_()" style=" letter-spacing: 3px;" class="btn form-control">Assign</button>  
+                    </div>
 
+                </div>
+            </div>
         </div>
         <div id="ChangeMentorField" class="fade-in" style="display: none;">
             

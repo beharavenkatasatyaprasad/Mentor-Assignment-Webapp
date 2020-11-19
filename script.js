@@ -190,11 +190,33 @@ async function createStudent() {
     }  
 }
 
-function AssignStudents(){  
-    async function getMentors() {
-        const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
-        const response = await res.json();
-        console.log(response);
+const selectedStudents = [];
+const students = [];
+const mentors = [];
+
+async function getMentors() {
+    const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
+    const response = await res.json();
+    mentors.push(response);    
+}
+getMentors();
+
+async function getStudents() {
+    const res = await fetch('https://mentorassignment.herokuapp.com/student');
+    const response = await res.json();
+    students.push(response);    
+}
+console.log(students)
+console.log(mentors)
+
+function selectedStudents_(){
+    selectedStudents.length = 0;
+    const select = document.getElementById("selectedStudents"); 
+    for (i = 0; i < select.length; i++) {
+        if(select.options[i].selected === true){
+            selectedStudents.push(select.options[i].value)
+        } 
     }
-    getMentors();
+    console.log(selectedStudents);
+    document.getElementById('selectGroupForm').reset()
 }
