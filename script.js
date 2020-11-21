@@ -224,7 +224,7 @@ getStudents();
 
 console.log(students)
 console.log(mentors)
-const selectedStudentName = document.getElementById("selectedStudentName");
+let SelStudentName = document.getElementById("selectedStudentName");
 
 
 function AssignMentor(){
@@ -288,7 +288,7 @@ function listStudentsToSelect(){
 async function UpdateMentor() {
     let data = {
         mentor: selectedmentor,
-        studentName: selectedStudentName.value
+        studentName: SelStudentName.value
     }
     await fetch('https://mentorassignment.herokuapp.com/mentor/assignStudent', {
         method: 'PUT',
@@ -302,10 +302,10 @@ async function UpdateMentor() {
 
 function selectedStudents_(){
     const submitBtn = document.getElementById('assignTheseStudents');
-    submitBtn.innerHTML = "Loading..."
-    const Form = document.getElementById('selectGroupForm');
+    // submitBtn.innerHTML = "Loading..."
+    // const Form = document.getElementById('selectGroupForm');
     const message = document.getElementById('message');
-    console.log(selectedStudentName.value)
+    console.log(SelStudentName.value)
     // if( === 'default'){ 
     //     message.innerHTML = "";
     //     const alertmsg = document.createElement('div');
