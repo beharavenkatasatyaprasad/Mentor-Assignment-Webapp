@@ -244,15 +244,15 @@ function AssignMentor(){
         mentorMbl.className = 'align-middle';
         mentorMbl.innerHTML = mentor.contact;
         mentorRow.appendChild(mentorMbl);
-        const noOfStudents = document.createElement('td')
-        noOfStudents.className = 'align-middle';
-        noOfStudents.innerHTML = mentor.studentList.length;
-        mentorRow.appendChild(noOfStudents);
+        // const noOfStudents = document.createElement('td')
+        // noOfStudents.className = 'align-middle';
+        // noOfStudents.innerHTML = mentor.studentList.length;
+        // mentorRow.appendChild(noOfStudents);
         const Assigncol = document.createElement('td')
         Assigncol.className = 'align-middle';
         const AssignBtn = document.createElement('button');
         AssignBtn.type = 'button';
-        AssignBtn.className = 'btn btn-primary p-0 btn-sm'
+        AssignBtn.className = 'btn btn-primary btn-sm'
         AssignBtn.innerHTML = 'Add Student';
         Assigncol.appendChild(AssignBtn);
         mentorRow.appendChild(Assigncol);
