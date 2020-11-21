@@ -270,6 +270,7 @@ function AssignMentor(){
 
 
 function listStudentsToSelect(){
+    
     students.forEach(student=>{
         if(student.mentorAssigned === false){
             const option = document.createElement("option");
