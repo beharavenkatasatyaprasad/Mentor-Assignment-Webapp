@@ -255,7 +255,6 @@ function AssignMentor(){
         MentorsTable.appendChild(mentorRow);
 
         AssignBtn.addEventListener('click',()=>{
-            getStudents();
             const SelectGroup = document.getElementById('selectGroup');
             SelectGroup.style.display = 'block'
             SelectGroup.classList.add('fade-in')
@@ -270,7 +269,6 @@ function AssignMentor(){
 
 
 function listStudentsToSelect(){
-    
     students.forEach(student=>{
         if(student.mentorAssigned === false){
             const option = document.createElement("option");
@@ -279,6 +277,7 @@ function listStudentsToSelect(){
             selectedStudentName.appendChild(option);
         }
     })
+    getStudents();
 }
 
 async function UpdateMentor() {
