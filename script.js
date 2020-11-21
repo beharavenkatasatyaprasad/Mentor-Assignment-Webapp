@@ -285,7 +285,9 @@ function listStudentsToSelect(){
     getStudents();
 }
 
-async function UpdateMentor() {
+async function addStudenttoMentor() {
+    const submitBtn = document.getElementById('selectbtn');
+    submitBtn.innerHTML = "Loading..."
     let data = {
         mentor: selectedmentor,
         studentName: SelStudentName.value
@@ -297,50 +299,22 @@ async function UpdateMentor() {
             'Content-Type': 'application/json'
         }
     });
-    console.log('success')
-}
-
-function selectedStudents_(){
-    const submitBtn = document.getElementById('assignTheseStudents');
-    // submitBtn.innerHTML = "Loading..."
-    // const Form = document.getElementById('selectGroupForm');
     const message = document.getElementById('message');
-    console.log(SelStudentName.value)
-    // if( === 'default'){ 
-    //     message.innerHTML = "";
-    //     const alertmsg = document.createElement('div');
-    //     const closebtn = document.createElement('button');
-    //     closebtn.type = 'button';
-    //     closebtn.className = 'close';
-    //     closebtn.setAttribute('data-dismiss','alert');
-    //     closebtn.setAttribute('aria-label','Close');
-    //     const span = document.createElement('span');
-    //     span.setAttribute('aria-hidde','true');
-    //     span.innerHTML = '&times;'
-    //     closebtn.appendChild(span);
-    //     alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
-    //     alertmsg.innerHTML = 'Please Select A Student !!!';
-    //     alertmsg.appendChild(closebtn);
-    //     message.appendChild(alertmsg);
-
-    // }else{
-    //     UpdateMentor();
-    //     message.innerHTML = "";
-    //     const successmsg = document.createElement('div');
-    //     const closebtn = document.createElement('button');
-    //     closebtn.type = 'button';
-    //     closebtn.className = 'close';
-    //     closebtn.setAttribute('data-dismiss','alert');
-    //     closebtn.setAttribute('aria-label','Close');
-    //     const span = document.createElement('span');
-    //     span.setAttribute('aria-hidden','true');
-    //     span.innerHTML = '&times;'
-    //     closebtn.appendChild(span);
-    //     successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
-    //     successmsg.innerHTML = 'Data Added Successfully..';
-    //     successmsg.appendChild(closebtn);
-    //     message.appendChild(successmsg);
-    //     Form.reset();
-    // }
+    const successmsg = document.createElement('div');
+    const closebtn = document.createElement('button');
+    closebtn.type = 'button';
+    closebtn.className = 'close';
+    closebtn.setAttribute('data-dismiss','alert');
+    closebtn.setAttribute('aria-label','Close');
+    const span = document.createElement('span');
+    span.setAttribute('aria-hidden','true');
+    span.innerHTML = '&times;'
+    closebtn.appendChild(span);
+    successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
+    successmsg.innerHTML = 'Data Added Successfully..';
+    successmsg.appendChild(closebtn);
+    message.appendChild(successmsg);    
     submitBtn.innerHTML = "Assign"
+    // AssignMentor();
 }
+
