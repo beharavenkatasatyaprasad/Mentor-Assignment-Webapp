@@ -196,8 +196,8 @@ async function createStudent() {
 }
 
 
-const students = [];
-const mentors = [];
+let students = [];
+let mentors = [];
 let selectedmentor
 
 
