@@ -249,7 +249,7 @@ function AssignMentor(){
         const AssignBtn = document.createElement('button');
         AssignBtn.type = 'button';
         AssignBtn.setAttribute("data-toggle", "modal")
-        AssignBtn.setAttribute("data-target", ".bd-example-modal-lg")
+        AssignBtn.setAttribute("data-target", "#AssignModal")
         AssignBtn.className = 'btn btn-primary btn-sm'
         AssignBtn.innerHTML = 'Add Student';
         Assigncol.appendChild(AssignBtn);

@@ -152,23 +152,35 @@
             <!-- <div class="modal fade bd-assignStudents-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
-                    <form id='selectGroupForm'>
-                        <select class="form-control" id="selectedStudentName">
-                            <option value="default">---select a student---</option>
-                        </select>
-                        <button id="selectbtn" type="button" id="assignTheseStudents" onclick="selectedStudents_()" style=" letter-spacing: 3px;" class="btn form-control">Assign</button>
-                    </form> 
+
                   </div>
                 </div>
             </div> -->
             
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    ...
+            <div id="AssignModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+              
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id='selectGroupForm'>
+                            <select class="form-control" id="selectedStudentName">
+                                <option value="default">---select a student---</option>
+                            </select>
+                            <button id="selectbtn" type="button" data-dismiss="modal" id="assignTheseStudents" onclick="selectedStudents_()" style=" letter-spacing: 3px;" class="btn form-control">Assign</button>
+                        </form> 
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+              
                 </div>
-                </div>
-            </div>
+              </div>
             <!-- <div id="selectGroup" class="students col-sm-10 p-3" style="margin: auto; display: none;">
                 <div class="students-container col-sm-12">
                     <div class="mentorname text-center">
