@@ -276,15 +276,20 @@ function listStudentsToSelect(){
     selectedStudentName.innerHTML="";
     students.forEach(student=>{
         if(student.mentorAssigned === false){
+            console.log(student.length)
             if(student.length === 0){
                 const option = document.createElement("option");
                 option.innerHTML ="--No Students Available-- ";
                 selectedStudentName.appendChild(option);
             }else{
+                console.log(student.length)
                 const option = document.createElement("option");
-                option.value = student.name;
-                option.innerHTML = student.name;
-                selectedStudentName.appendChild(option);
+                option.innerHTML = `
+                <div class="form-group">     
+                    <button type="button"  onclick="createMentorbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create Mentor</button>  
+                </div>
+                `
+                selectGroupForm.appendChild(option);
             }
         }
     })
@@ -313,7 +318,6 @@ function selectedStudent_(){
     // console.log(SelStudentName.value)
     addStudenttoMentor();
     message.innerHTML = "";
-    setTimeout(() => {
     const successmsg = document.createElement('div');
     const closebtn = document.createElement('button');
     closebtn.type = 'button';
@@ -329,6 +333,4 @@ function selectedStudent_(){
     successmsg.appendChild(closebtn);
     message.appendChild(successmsg);    
     submitBtn.innerHTML = "Assign"
-    }, 3000);
-
 }
