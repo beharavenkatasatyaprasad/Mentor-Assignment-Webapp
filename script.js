@@ -327,6 +327,7 @@ function selectedStudent_(){
     successmsg.innerHTML = 'Data Added Successfully..';
     successmsg.appendChild(closebtn);
     message.appendChild(successmsg);    
-    submitBtn.innerHTML = "Assign"
-    AssignMentor()
+    submitBtn.innerHTML = "Assigned"
+    setTimeout("location.href = 'index.html'",4000);
+    AssignMentor();
 }
