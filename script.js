@@ -269,7 +269,7 @@ function listStudentsToSelect(){
     })
 }
 
-async function putStudents() {
+async function UpdateMentor() {
     let data = {
         mentor: selectedmentor,
         studentName: selectedStudentName.value
@@ -286,7 +286,7 @@ async function putStudents() {
 
 function selectedStudents_(){
     const Form = document.getElementById('selectGroupForm');
-    const message = document.getElementById('message3');
+    const message = document.getElementById('message');
     if(selectedStudentName.value === 'default'){ 
         message.innerHTML = "";
         const alertmsg = document.createElement('div');
@@ -305,7 +305,7 @@ function selectedStudents_(){
         message.appendChild(alertmsg);
 
     }else{
-        putStudents();
+        UpdateMentor();
         message.innerHTML = "";
         const successmsg = document.createElement('div');
         const closebtn = document.createElement('button');
@@ -323,5 +323,4 @@ function selectedStudents_(){
         message.appendChild(successmsg);
         Form.reset();
     }
-
 }
