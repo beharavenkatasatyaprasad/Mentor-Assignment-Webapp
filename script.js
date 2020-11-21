@@ -269,7 +269,7 @@ function AssignMentor(){
 
 
 function listStudentsToSelect(){
-    
+    selectedStudentName.innerHTML=""
     students.forEach(student=>{
         if(student.mentorAssigned === false){
             const option = document.createElement("option");
