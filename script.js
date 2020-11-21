@@ -276,10 +276,16 @@ function listStudentsToSelect(){
     selectedStudentName.innerHTML="";
     students.forEach(student=>{
         if(student.mentorAssigned === false){
-            const option = document.createElement("option");
-            option.value = student.name;
-            option.innerHTML = student.name;
-            selectedStudentName.appendChild(option);
+            if(student.length === 0){
+                const option = document.createElement("option");
+                option.innerHTML ="--No Students Available-- ";
+                selectedStudentName.appendChild(option);
+            }else{
+                const option = document.createElement("option");
+                option.value = student.name;
+                option.innerHTML = student.name;
+                selectedStudentName.appendChild(option);
+            }
         }
     })
     getStudents();
@@ -307,6 +313,7 @@ function selectedStudent_(){
     // console.log(SelStudentName.value)
     addStudenttoMentor();
     message.innerHTML = "";
+    setTimeout(() => {
     const successmsg = document.createElement('div');
     const closebtn = document.createElement('button');
     closebtn.type = 'button';
@@ -322,4 +329,6 @@ function selectedStudent_(){
     successmsg.appendChild(closebtn);
     message.appendChild(successmsg);    
     submitBtn.innerHTML = "Assign"
+    }, 3000);
+
 }
