@@ -244,14 +244,16 @@ function AssignMentor(){
         mentorMbl.className = 'align-middle';
         mentorMbl.innerHTML = mentor.contact;
         mentorRow.appendChild(mentorMbl);
+        const noOfStudents = document.createElement('td')
+        noOfStudents.className = 'align-middle';
+        noOfStudents.innerHTML = mentor.studentList.length;
+        mentorRow.appendChild(noOfStudents);
         const Assigncol = document.createElement('td')
         Assigncol.className = 'align-middle';
         const AssignBtn = document.createElement('button');
         AssignBtn.type = 'button';
-        AssignBtn.setAttribute("data-toggle", "modal")
-        AssignBtn.setAttribute("data-target", "#AssignModal")
         AssignBtn.className = 'btn btn-primary btn-sm'
-        AssignBtn.innerHTML = 'Add Student';
+        AssignBtn.innerHTML = 'Add Student to ' + mentor.name;
         Assigncol.appendChild(AssignBtn);
         mentorRow.appendChild(Assigncol);
         MentorsTable.appendChild(mentorRow);
@@ -265,13 +267,13 @@ function AssignMentor(){
             SelectedMentorName.innerHTML =  mentor.name;
             selectedmentor = mentor.name;
             listStudentsToSelect()
+            selectedStudentName.innerHTML="";
         })
     })
 }
 
 
 function listStudentsToSelect(){
-    selectedStudentName.innerHTML=""
     students.forEach(student=>{
         if(student.mentorAssigned === false){
             const option = document.createElement("option");
