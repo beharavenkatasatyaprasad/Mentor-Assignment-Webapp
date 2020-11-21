@@ -280,7 +280,7 @@ function listStudentsToSelect(){
             const option = document.createElement("div");
                 option.className = 'form-group'
                 option.innerHTML = ` 
-                    <button type="button" style=" letter-spacing: 3px;" class="btn btn-primary form-control">
+                    <button type="button" onclick="selectedStudent_()" style="letter-spacing: 3px;" class="btn btn-primary form-control">
                         ${student.name}
                     </button>
                 `
@@ -327,4 +327,5 @@ function selectedStudent_(){
     successmsg.appendChild(closebtn);
     message.appendChild(successmsg);    
     submitBtn.innerHTML = "Assign"
+    AssignMentor()
 }
