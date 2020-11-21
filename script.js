@@ -305,7 +305,7 @@ function selectedStudent_(){
     submitBtn.innerHTML = "Loading..."
     const message = document.getElementById('message');
     // console.log(SelStudentName.value)
-    UpdateMentor();
+    addStudenttoMentor();
     message.innerHTML = "";
     const successmsg = document.createElement('div');
     const closebtn = document.createElement('button');
