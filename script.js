@@ -66,6 +66,8 @@ function ChangeMentorBtn(){
 
 
 async function createMentor() {
+    const submitBtn = document.getElementById('MentorSubmitBtn');
+    submitBtn.innerHTML = 'Loading...'
     const MentorId = document.getElementById('MentorId').value;
     const MentorName = document.getElementById('MentorName').value;
     const MentorContact = document.getElementById('MentorContact').value;
@@ -123,11 +125,13 @@ async function createMentor() {
         Form.reset();
         getMentors();
     }  
+    submitBtn.innerHTML = 'Submit' 
 }
 
 
 async function createStudent() {
-
+    const submitBtn = document.getElementById('StudentSubmitBtn');
+    submitBtn.innerHTML = 'Loading...'
     const StudentId = document.getElementById('studentId').value;
     const StudentName = document.getElementById('StudentName').value;
     const Batch = document.getElementById('Batch').value;
@@ -186,7 +190,9 @@ async function createStudent() {
         message.appendChild(successmsg);
         Form.reset();
         getStudents();
-    }  
+    }
+    submitBtn.innerHTML="Submit"
+    
 }
 
 
@@ -196,7 +202,7 @@ let selectedmentor
 
 
 async function getMentors() {
-    mentors.length=0;
+    mentors.splice(0, mentors.length)
     const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
     const response = await res.json();
     response.forEach(mentor => {
@@ -207,7 +213,7 @@ async function getMentors() {
 getMentors();
 
 async function getStudents() {
-    students.length=0;
+    students.splice(0, students.length)
     const res = await fetch('https://mentorassignment.herokuapp.com/student');
     const response = await res.json();
     response.forEach(student => {
@@ -234,6 +240,10 @@ function AssignMentor(){
         mentorName.className = 'align-middle';
         mentorName.innerHTML = mentor.name
         mentorRow.appendChild(mentorName);
+        const mentorMbl = document.createElement('td')
+        mentorMbl.className = 'align-middle';
+        mentorMbl.innerHTML = mentor.contact;
+        mentorRow.appendChild(mentorMbl);
         const Assigncol = document.createElement('td')
         Assigncol.className = 'align-middle';
         const AssignBtn = document.createElement('button');
@@ -285,6 +295,8 @@ async function UpdateMentor() {
 }
 
 function selectedStudents_(){
+    const submitBtn = document.getElementById('assignTheseStudents');
+    submitBtn.innerHTML = "Loading..."
     const Form = document.getElementById('selectGroupForm');
     const message = document.getElementById('message');
     if(selectedStudentName.value === 'default'){ 
@@ -323,4 +335,5 @@ function selectedStudents_(){
         message.appendChild(successmsg);
         Form.reset();
     }
+    submitBtn.innerHTML = "Assign"
 }

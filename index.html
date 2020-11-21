@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="form-group">     
-                            <button type="button" onclick="createMentor()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
+                            <button type="button" onclick="createMentor()" id="MentorSubmitBtn" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
                         </div>
                     </form>
                   </div>   
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <div class="form-group">     
-                            <button type="button" onclick="createStudent()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
+                            <button type="button" id="StudentSubmitBtn" onclick="createStudent()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
                         </div>
                     </form>
                   </div>   
@@ -141,6 +141,7 @@
                   <tr>
                     <th scope="col">Mentor ID</th>
                     <th scope="col">Mentor Name</th>
+                    <th scope="col">Mbl Number</th>
                     <th scope="col">Add Student</th>
                   </tr>
                 </thead>
@@ -173,7 +174,7 @@
                                 <option value="default">---select a student---</option>
                             </select>
                         </form> 
-                        <button id="selectbtn" type="button" onclick="selectedStudents_()" style=" letter-spacing: 3px;" class="btn form-control">Assign</button>  
+                        <button id="selectbtn" type="button" id="assignTheseStudents" onclick="selectedStudents_()" style=" letter-spacing: 3px;" class="btn form-control">Assign</button>  
                     </div>
                     
                 </div>
