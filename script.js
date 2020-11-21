@@ -262,13 +262,14 @@ function AssignMentor(){
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
             selectedmentor = mentor.name;
-            listStudentsToSelect();
+            listStudentsToSelect()
         })
     })
 }
 
 
 function listStudentsToSelect(){
+    
     students.forEach(student=>{
         if(student.mentorAssigned === false){
             const option = document.createElement("option");
