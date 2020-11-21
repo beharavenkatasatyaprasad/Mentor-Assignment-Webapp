@@ -248,8 +248,10 @@ function AssignMentor(){
         Assigncol.className = 'align-middle';
         const AssignBtn = document.createElement('button');
         AssignBtn.type = 'button';
+        AssignBtn.setAttribute("data-toggle", "modal")
+        AssignBtn.setAttribute("data-target", ".bd-assignStudents-modal-sm")
         AssignBtn.className = 'btn btn-primary btn-sm'
-        AssignBtn.innerHTML = 'Add Student to ' + mentor.name;
+        AssignBtn.innerHTML = 'Add Student';
         Assigncol.appendChild(AssignBtn);
         mentorRow.appendChild(Assigncol);
         MentorsTable.appendChild(mentorRow);
