@@ -255,6 +255,7 @@ function AssignMentor(){
         MentorsTable.appendChild(mentorRow);
 
         AssignBtn.addEventListener('click',()=>{
+            getStudents();
             const SelectGroup = document.getElementById('selectGroup');
             SelectGroup.style.display = 'block'
             SelectGroup.classList.add('fade-in')
@@ -262,7 +263,6 @@ function AssignMentor(){
             SelectedMentorName.style.textTransform = 'capitalize';
             SelectedMentorName.innerHTML =  mentor.name;
             selectedmentor = mentor.name;
-            getStudents();
             listStudentsToSelect();
         })
     })
