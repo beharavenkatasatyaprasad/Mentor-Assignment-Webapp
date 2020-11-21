@@ -273,26 +273,16 @@ function AssignMentor(){
 
 
 function listStudentsToSelect(){
-    selectedStudentName.innerHTML="";
-    students.forEach(student=>{
-        if(student.mentorAssigned === false){
-            console.log(student.length)
-            if(student.length === 0){
-                const option = document.createElement("option");
-                option.innerHTML ="--No Students Available-- ";
-                selectedStudentName.appendChild(option);
-            }else{
-                console.log(student.length)
-                const option = document.createElement("option");
-                option.innerHTML = `
-                <div class="form-group">     
-                    <button type="button"  onclick="createMentorbtn()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create Mentor</button>  
-                </div>
-                `
-                selectGroupForm.appendChild(option);
-            }
-        }
-    })
+    const selectGroupForm = document.getElementById('selectGroupForm');
+    selectGroupForm.innerHTML="";
+    const option = document.createElement("div");
+    option.className = 'form-group'
+    option.innerHTML = ` 
+        <button type="button" style=" letter-spacing: 3px;" class="btn btn-primary form-control">
+            ${student.name}
+        </button>
+    `
+    selectGroupForm.appendChild(option);
     getStudents();
 }
 
