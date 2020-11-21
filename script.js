@@ -307,21 +307,19 @@ function selectedStudent_(){
     // console.log(SelStudentName.value)
     addStudenttoMentor();
     message.innerHTML = "";
-    setTimeout(() => {
-        const successmsg = document.createElement('div');
-        const closebtn = document.createElement('button');
-        closebtn.type = 'button';
-        closebtn.className = 'close';
-        closebtn.setAttribute('data-dismiss','alert');
-        closebtn.setAttribute('aria-label','Close');
-        const span = document.createElement('span');
-        span.setAttribute('aria-hidden','true');
-        span.innerHTML = '&times;'
-        closebtn.appendChild(span);
-        successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
-        successmsg.innerHTML = 'Data Added Successfully..';
-        successmsg.appendChild(closebtn);
-        message.appendChild(successmsg);    
-        submitBtn.innerHTML = "Assign"
-    }, 3000);
+    const successmsg = document.createElement('div');
+    const closebtn = document.createElement('button');
+    closebtn.type = 'button';
+    closebtn.className = 'close';
+    closebtn.setAttribute('data-dismiss','alert');
+    closebtn.setAttribute('aria-label','Close');
+    const span = document.createElement('span');
+    span.setAttribute('aria-hidden','true');
+    span.innerHTML = '&times;'
+    closebtn.appendChild(span);
+    successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
+    successmsg.innerHTML = 'Data Added Successfully..';
+    successmsg.appendChild(closebtn);
+    message.appendChild(successmsg);    
+    submitBtn.innerHTML = "Assign"
 }
