@@ -286,8 +286,6 @@ function listStudentsToSelect(){
 }
 
 async function addStudenttoMentor() {
-    const submitBtn = document.getElementById('selectbtn');
-    submitBtn.innerHTML = "Loading..."
     let data = {
         mentor: selectedmentor,
         studentName: SelStudentName.value
@@ -299,7 +297,16 @@ async function addStudenttoMentor() {
             'Content-Type': 'application/json'
         }
     });
+    console.log('success')
+}
+
+function selectedStudent_(){
+    const submitBtn = document.getElementById('selectbtn');
+    submitBtn.innerHTML = "Loading..."
     const message = document.getElementById('message');
+    // console.log(SelStudentName.value)
+    UpdateMentor();
+    message.innerHTML = "";
     const successmsg = document.createElement('div');
     const closebtn = document.createElement('button');
     closebtn.type = 'button';
@@ -315,6 +322,4 @@ async function addStudenttoMentor() {
     successmsg.appendChild(closebtn);
     message.appendChild(successmsg);    
     submitBtn.innerHTML = "Assign"
-    // AssignMentor();
 }
-
