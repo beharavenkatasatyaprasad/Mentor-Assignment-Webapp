@@ -66,12 +66,11 @@ function ChangeMentorBtn(){
 
 
 async function createMentor() {
-
     const MentorId = document.getElementById('MentorId').value;
     const MentorName = document.getElementById('MentorName').value;
     const MentorContact = document.getElementById('MentorContact').value;
     const Form = document.getElementById('mentorForm');
-    const message = document.getElementById('message1');
+    const message = document.getElementById('message');
 
     if(!MentorContact || !MentorName || !MentorId){
         message.innerHTML = "";
@@ -85,7 +84,7 @@ async function createMentor() {
         span.setAttribute('aria-hidde','true');
         span.innerHTML = '&times;'
         closebtn.appendChild(span);
-        alertmsg.className = 'alert alert-danger alert-dismissible fade fade-in show'
+        alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
         alertmsg.innerHTML = 'Please Fill out All The Fields!!';
         alertmsg.appendChild(closebtn);
         message.appendChild(alertmsg);
@@ -116,13 +115,13 @@ async function createMentor() {
         span.setAttribute('aria-hidde','true');
         span.innerHTML = '&times;'
         closebtn.appendChild(span);
-        successmsg.className = 'alert alert-success alert-dismissible fade fade-in show'
+        successmsg.className = 'alert m-0 alert-success alert-dismissible fade fade-in show'
         successmsg.innerHTML = 'Data Added Successfully..';
         successmsg.appendChild(closebtn);
         message.appendChild(successmsg);
         console.log(data);
         Form.reset();
-
+        getMentors();
     }  
 }
 
@@ -134,7 +133,7 @@ async function createStudent() {
     const Batch = document.getElementById('Batch').value;
     const StudentContact = document.getElementById('StudentContact').value;
     const Form = document.getElementById('Studentform');
-    const message = document.getElementById('message2');
+    const message = document.getElementById('message');
     
     if(!StudentId || !StudentName || !Batch || !StudentContact){
         message.innerHTML = "";
@@ -148,7 +147,7 @@ async function createStudent() {
         span.setAttribute('aria-hidde','true');
         span.innerHTML = '&times;'
         closebtn.appendChild(span);
-        alertmsg.className = 'alert alert-danger alert-dismissible fade fade-in show'
+        alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
         alertmsg.innerHTML = 'Please Fill out All The Fields!!';
         alertmsg.appendChild(closebtn);
         message.appendChild(alertmsg);
@@ -181,16 +180,16 @@ async function createStudent() {
         span.setAttribute('aria-hidden','true');
         span.innerHTML = '&times;'
         closebtn.appendChild(span);
-        successmsg.className = 'alert alert-success alert-dismissible fade fade-in show'
+        successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
         successmsg.innerHTML = 'Data Added Successfully..';
         successmsg.appendChild(closebtn);
         message.appendChild(successmsg);
-        console.log(data);
         Form.reset();
+        getStudents();
     }  
 }
 
-// const selectedStudents = [];
+
 const students = [];
 const mentors = [];
 let selectedmentor
@@ -260,8 +259,6 @@ function AssignMentor(){
 
 
 function listStudentsToSelect(){
-//    select.innerHTML = ''
-    console.log(students)
     students.forEach(student=>{
         if(student.mentorAssigned === false){
             const option = document.createElement("option");
@@ -302,7 +299,7 @@ function selectedStudents_(){
         span.setAttribute('aria-hidde','true');
         span.innerHTML = '&times;'
         closebtn.appendChild(span);
-        alertmsg.className = 'alert alert-danger alert-dismissible fade fade-in show'
+        alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
         alertmsg.innerHTML = 'Please Select A Student !!!';
         alertmsg.appendChild(closebtn);
         message.appendChild(alertmsg);
@@ -320,16 +317,11 @@ function selectedStudents_(){
         span.setAttribute('aria-hidden','true');
         span.innerHTML = '&times;'
         closebtn.appendChild(span);
-        successmsg.className = 'alert alert-success alert-dismissible fade fade-in show'
+        successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
         successmsg.innerHTML = 'Data Added Successfully..';
         successmsg.appendChild(closebtn);
         message.appendChild(successmsg);
         Form.reset();
     }
-    
-
-
-
-    
 
 }
