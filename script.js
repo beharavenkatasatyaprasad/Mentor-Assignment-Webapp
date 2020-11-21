@@ -76,22 +76,20 @@ async function createMentor() {
 
     if(!MentorContact || !MentorName || !MentorId){
         message.innerHTML = "";
-        setTimeout(() => {
-            const alertmsg = document.createElement('div');
-            const closebtn = document.createElement('button');
-            closebtn.type = 'button';
-            closebtn.className = 'close';
-            closebtn.setAttribute('data-dismiss','alert');
-            closebtn.setAttribute('aria-label','Close');
-            const span = document.createElement('span');
-            span.setAttribute('aria-hidde','true');
-            span.innerHTML = '&times;'
-            closebtn.appendChild(span);
-            alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
-            alertmsg.innerHTML = 'Please Fill out All The Fields!!';
-            alertmsg.appendChild(closebtn);
-            message.appendChild(alertmsg);   
-        }, 3000);
+        const alertmsg = document.createElement('div');
+        const closebtn = document.createElement('button');
+        closebtn.type = 'button';
+        closebtn.className = 'close';
+        closebtn.setAttribute('data-dismiss','alert');
+        closebtn.setAttribute('aria-label','Close');
+        const span = document.createElement('span');
+        span.setAttribute('aria-hidde','true');
+        span.innerHTML = '&times;'
+        closebtn.appendChild(span);
+        alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
+        alertmsg.innerHTML = 'Please Fill out All The Fields!!';
+        alertmsg.appendChild(closebtn);
+        message.appendChild(alertmsg);
     }
 
     else{
@@ -109,27 +107,25 @@ async function createMentor() {
             }
         });
         message.innerHTML = "";
-        setTimeout(() => {
-            const successmsg = document.createElement('div');
-            const closebtn = document.createElement('button');
-            closebtn.type = 'button';
-            closebtn.className = 'close';
-            closebtn.setAttribute('data-dismiss','alert');
-            closebtn.setAttribute('aria-label','Close');
-            const span = document.createElement('span');
-            span.setAttribute('aria-hidde','true');
-            span.innerHTML = '&times;'
-            closebtn.appendChild(span);
-            successmsg.className = 'alert m-0 alert-success alert-dismissible fade fade-in show'
-            successmsg.innerHTML = 'Data Added Successfully..';
-            successmsg.appendChild(closebtn);
-            message.appendChild(successmsg);  
-        }, 3000);
-        // console.log(data);
+        const successmsg = document.createElement('div');
+        const closebtn = document.createElement('button');
+        closebtn.type = 'button';
+        closebtn.className = 'close';
+        closebtn.setAttribute('data-dismiss','alert');
+        closebtn.setAttribute('aria-label','Close');
+        const span = document.createElement('span');
+        span.setAttribute('aria-hidde','true');
+        span.innerHTML = '&times;'
+        closebtn.appendChild(span);
+        successmsg.className = 'alert m-0 alert-success alert-dismissible fade fade-in show'
+        successmsg.innerHTML = 'Data Added Successfully..';
+        successmsg.appendChild(closebtn);
+        message.appendChild(successmsg);
+        console.log(data);
         Form.reset();
         getMentors();
     }  
-    submitBtn.innerHTML = 'Create' 
+    submitBtn.innerHTML = 'Submit' 
 }
 
 
@@ -145,23 +141,20 @@ async function createStudent() {
     
     if(!StudentId || !StudentName || !Batch || !StudentContact){
         message.innerHTML = "";
-        setTimeout(() => {
-            const alertmsg = document.createElement('div');
-            const closebtn = document.createElement('button');
-            closebtn.type = 'button';
-            closebtn.className = 'close';
-            closebtn.setAttribute('data-dismiss','alert');
-            closebtn.setAttribute('aria-label','Close');
-            const span = document.createElement('span');
-            span.setAttribute('aria-hidde','true');
-            span.innerHTML = '&times;'
-            closebtn.appendChild(span);
-            alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
-            alertmsg.innerHTML = 'Please Fill out All The Fields!!';
-            alertmsg.appendChild(closebtn);
-            message.appendChild(alertmsg);
-        }, 3000);
-        submitBtn.innerHTML = 'Create'
+        const alertmsg = document.createElement('div');
+        const closebtn = document.createElement('button');
+        closebtn.type = 'button';
+        closebtn.className = 'close';
+        closebtn.setAttribute('data-dismiss','alert');
+        closebtn.setAttribute('aria-label','Close');
+        const span = document.createElement('span');
+        span.setAttribute('aria-hidde','true');
+        span.innerHTML = '&times;'
+        closebtn.appendChild(span);
+        alertmsg.className = 'alert alert-danger m-0 alert-dismissible fade fade-in show'
+        alertmsg.innerHTML = 'Please Fill out All The Fields!!';
+        alertmsg.appendChild(closebtn);
+        message.appendChild(alertmsg);
     }
 
     else{
@@ -181,22 +174,20 @@ async function createStudent() {
             }
         });
         message.innerHTML = "";
-        setTimeout(() => {
-            const successmsg = document.createElement('div');
-            const closebtn = document.createElement('button');
-            closebtn.type = 'button';
-            closebtn.className = 'close';
-            closebtn.setAttribute('data-dismiss','alert');
-            closebtn.setAttribute('aria-label','Close');
-            const span = document.createElement('span');
-            span.setAttribute('aria-hidden','true');
-            span.innerHTML = '&times;'
-            closebtn.appendChild(span);
-            successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
-            successmsg.innerHTML = 'Data Added Successfully..';
-            successmsg.appendChild(closebtn);
-            message.appendChild(successmsg);
-        }, 3000);
+        const successmsg = document.createElement('div');
+        const closebtn = document.createElement('button');
+        closebtn.type = 'button';
+        closebtn.className = 'close';
+        closebtn.setAttribute('data-dismiss','alert');
+        closebtn.setAttribute('aria-label','Close');
+        const span = document.createElement('span');
+        span.setAttribute('aria-hidden','true');
+        span.innerHTML = '&times;'
+        closebtn.appendChild(span);
+        successmsg.className = 'alert alert-success m-0 alert-dismissible fade fade-in show'
+        successmsg.innerHTML = 'Data Added Successfully..';
+        successmsg.appendChild(closebtn);
+        message.appendChild(successmsg);
         Form.reset();
         getStudents();
     }
@@ -267,20 +258,19 @@ function AssignMentor(){
         mentorRow.appendChild(Assigncol);
         MentorsTable.appendChild(mentorRow);
 
-        AssignBtn.addEventListener('click',selectFormFunction())
+        AssignBtn.addEventListener('click',()=>{
+            const SelectGroup = document.getElementById('selectGroup');
+            SelectGroup.style.display = 'block'
+            SelectGroup.classList.add('fade-in')
+            const SelectedMentorName = document.getElementById('SelectedMentor');
+            SelectedMentorName.style.textTransform = 'capitalize';
+            SelectedMentorName.innerHTML =  mentor.name;
+            selectedmentor = mentor.name;
+            listStudentsToSelect()
+        })
     })
 }
 
-function selectFormFunction(){
-    const SelectGroup = document.getElementById('selectGroup');
-    SelectGroup.style.display = 'block'
-    SelectGroup.classList.add('fade-in')
-    const SelectedMentorName = document.getElementById('SelectedMentor');
-    SelectedMentorName.style.textTransform = 'capitalize';
-    SelectedMentorName.innerHTML =  mentor.name;
-    selectedmentor = mentor.name;
-    listStudentsToSelect()
-}
 
 function listStudentsToSelect(){
     selectedStudentName.innerHTML="";
@@ -307,14 +297,14 @@ async function addStudenttoMentor() {
             'Content-Type': 'application/json'
         }
     });
-    console.log('success');
+    console.log('success')
 }
 
 function selectedStudent_(){
-    listStudentsToSelect()
     const submitBtn = document.getElementById('selectbtn');
     submitBtn.innerHTML = "Loading..."
     const message = document.getElementById('message');
+    // console.log(SelStudentName.value)
     addStudenttoMentor();
     message.innerHTML = "";
     setTimeout(() => {
