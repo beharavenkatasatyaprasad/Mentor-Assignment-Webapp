@@ -61,7 +61,7 @@ function AssignMentorTable(){
 
     MentorsTableDiv.innerHTML = ''
     const MentorsTable =document.createElement('table');
-    MentorsTable.className = 'col-sm-12 table table-hover  text-center table-dark';
+    MentorsTable.className = 'col-sm-12 table text-center';
     const TableHead = document.createElement('thead');
     TableHead.innerHTML = `
                     <th scope="col">Mentor ID</th>
@@ -178,6 +178,7 @@ function selectedStudent_(student){
     selectedStudentName = student;
     addStudenttoMentor();
     custom_alert("success", "Assigned " + `${selectedStudentName}` + " to " + `${selectedmentor}` );
-    getMentors()
-    AssignMentorTable()
+    setTimeout(() => {
+        document.location.href = "./UpdateMentor.html";
+    }, 3500);
 }
