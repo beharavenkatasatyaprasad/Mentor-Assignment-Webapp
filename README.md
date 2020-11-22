@@ -9,11 +9,8 @@ Click [here](https://mentor-assignment-webapp.netlify.app/) to preview the app i
 ### Technologies Used:
 
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" alt="html5"></code>
-<code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" alt="nodejs"></code>
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" alt="css3"></code>
-<code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" alt="nodepackagemanager"></code>
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-plain.svg" alt="bootstrap"></code>
-<code><img height="26" src="https://img.icons8.com/color/144/000000/mongodb.png" alt="MongodB"></code>
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" alt="javascript"></code>
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/jquery/jquery-original.svg" alt="jquery"></code>
 
