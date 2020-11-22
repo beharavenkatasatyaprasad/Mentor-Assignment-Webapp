@@ -1,18 +1,3 @@
-document.getElementById('Mentorbtn').addEventListener('click',()=>{
-    window.location.href = "./index.html";
-})
-
-document.getElementById('Studentbtn').addEventListener('click',()=>{
-    window.location.href = "./addStudent.html";
-})
-
-document.getElementById('assignMentorbtn').addEventListener('click',()=>{
-    window.location.href = "./AssignMentor.html";
-})
-document.getElementById('UpdateMentorbtn').addEventListener('click',()=>{
-    window.location.href = "./UpdateMentor.html";
-})
-
 async function addStudent() {
     const submitBtn = document.getElementById('StudentSubmitBtn');
     submitBtn.innerHTML = 'Loading...';

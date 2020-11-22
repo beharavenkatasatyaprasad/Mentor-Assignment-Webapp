@@ -13,32 +13,9 @@ document.getElementById('UpdateMentorbtn').addEventListener('click',()=>{
     window.location.href = "./UpdateMentor.html";
 })
 
-// let students = [];
-// let mentors = [];
-// // let selectedmentor
-
-// async function getMentors() {
-//     mentors.splice(0, mentors.length)
-//     const res = await fetch('https://mentorassignment.herokuapp.com/mentor');
-//     const response = await res.json();
-//     response.forEach(mentor => {
-//         mentors.push(mentor);    
-//     })  
-// }
-// getMentors();
-
-// async function getStudents() {
-//     students.splice(0, students.length)
-//     const res = await fetch('https://mentorassignment.herokuapp.com/student');
-//     const response = await res.json();
-//     response.forEach(student => {
-//         students.push(student);    
-//     })
-// }
-// getStudents();
-
-// console.log(students)
-// console.log(mentors)
+document.getElementById('ListMentorsBtn').addEventListener('click',()=>{
+  window.location.href = "./listMentors.html";
+})
 
 
 function custom_alert(type, message) {
