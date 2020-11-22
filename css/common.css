@@ -23,7 +23,7 @@ body{
 }
 
 .navbar{
-    background-color: rgb(19, 170, 82);
+    background-color:rgb(9, 225, 118);
 }
 
 .nav-buttons{
@@ -46,12 +46,10 @@ body{
     position: relative;
 }
 
-.input-title{
-    background-color: rgb(0, 128, 128, 0.8) !important;
-}
 
 .input-container  .input-header{
     padding: 10px 30px; 
+    color: rgb(9, 225, 118);
     letter-spacing: 2.5px; 
     font-family: 'Oswald'; 
     font-variant: small-caps;
@@ -79,13 +77,11 @@ body{
     border: none;
     border-left: 3px solid transparent;
     font-size: 16px;
-    -o-transition:all .5s;
-    -webkit-transition:all .5s;
-    transition:all .5s;
+    transition:all 0.5s;
 }
 
 .input-container .input-body input.form-control:focus{
-    border-color: rgb(19, 170, 82);
+    border-color: rgb(9, 225, 118);
 }
 
 .input-container .input-body input.form-control + i{
@@ -105,12 +101,12 @@ body{
 }
 
 .input-container .input-body input.form-control:focus + i{
-    color: rgb(19, 170, 82);
+    color:rgb(9, 225, 118);
 }
 
 
 .input-container .input-body button{
-    background-color:rgb(19, 170, 82);
+    background-color:rgb(9, 225, 118);
     border:0px;
     height: 50px;
     letter-spacing: normal;
@@ -126,7 +122,7 @@ body{
 .input-body button:hover{
     font-weight: bold;
     background-color: hsl(0, 0%, 0%);
-    color: rgb(19, 170, 82);
+    color: rgb(9, 225, 118);
     letter-spacing: 5px !important;
 }
 
@@ -134,11 +130,31 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+td>.btn{
+    background-color: rgb(9, 225, 118);
+    border: 0px solid rgb(9, 225, 118);
+    transition: all 0.5s;
+}
 
+td>.btn:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(9, 225, 118);
+}
 
 .students-container{
     background-color: rgb(0, 0, 0);
     padding: 5px;
     border-radius: 5%;
+}
+
+.modal-body>.form-group>button{
+    background-color: rgb(9, 225, 118);
+    border: 0px solid rgb(9, 225, 118);
+    transition: all 0.5s;
+}
+
+.modal-body>.form-group>button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(9, 225, 118);
 }
 
