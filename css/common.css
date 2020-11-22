@@ -18,13 +18,9 @@
     font-family: 'Josefin Sans',sans-serif;
 }
 
-body{
-    background: url(imgs/cover-img.jpg)  no-repeat  fixed;
-    background-size: cover;
-}
 
 .nav-buttons{
-    border-radius: 0%;
+    border-radius: 0% !important;
 }
 
 .welcome-page{
@@ -171,11 +167,9 @@ select{
     background-color: rgba(203, 32, 46);
     margin:0px;
     color: white;
-    border-radius: 0px;
+    border-radius: 5px;
     border: 0px;
     letter-spacing: normal;
-    border-bottom-left-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
     transition: all 0.5s;
 }
 
