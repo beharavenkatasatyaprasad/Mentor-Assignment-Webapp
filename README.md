@@ -12,7 +12,7 @@ Click [here](https://mentor-assignment-webapp.netlify.app/) to preview the app i
 - Add New Students to the Database.
 - Assign Student to Mentor.
 - Update the Mentor for a particular student.
-- List all Mentros with their student names.
+- List all Mentors with their student names.
 
 ##### Links
  - ``Server Deployment URL: https://mentorassignment.herokuapp.com/``
