@@ -26,7 +26,6 @@ async function addMentor() {
         });
         custom_alert("success", "Mentor Added Successfully...");
         Form.reset();
-        getMentors();
     }  
     submitBtn.innerHTML = 'Create' 
 }

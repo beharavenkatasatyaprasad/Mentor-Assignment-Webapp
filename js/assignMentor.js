@@ -1,6 +1,8 @@
 let mentors = [];
 let students = [];
 let selectedmentor
+let selectedStudentName
+let StudentsWithNoMentors = []
 
 getMentors()
 
@@ -65,6 +67,7 @@ function AssignMentorTable(){
                     <th scope="col">Mentor ID</th>
                     <th scope="col">Mentor Name</th>
                     <th scope="col">Mbl Number</th>
+                    <th scope="col">No. of Students Assigned</th>
                     <th scope="col">Add Student</th>
     `
     MentorsTable.appendChild(TableHead)
@@ -84,10 +87,10 @@ function AssignMentorTable(){
         mentorMbl.className = 'align-middle';
         mentorMbl.innerHTML = mentor.contact;
         mentorRow.appendChild(mentorMbl);
-        // const noOfStudentsUnder = document.createElement('td')
-        // noOfStudentsUnder.className = 'align-middle';
-        // noOfStudentsUnder.innerHTML = mentor.studentList.length
-        // mentorRow.appendChild(noOfStudentsUnder);
+        const noOfStudentsUnder = document.createElement('td')
+        noOfStudentsUnder.className = 'align-middle';
+        noOfStudentsUnder.innerHTML = mentor.studentList.length
+        mentorRow.appendChild(noOfStudentsUnder);
         const Assigncol = document.createElement('td')
         Assigncol.innerHTML =  `
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SelectModal">
@@ -109,8 +112,7 @@ function AssignMentorTable(){
     MentorsTableDiv.appendChild(MentorsTable)
 }
 
-let selectedStudentName
-let StudentsWithNoMentors = []
+
 function listStudentsToSelect(){
     const selectGroupForm = document.getElementById('SelectStudentsToAssign');
     selectGroupForm.innerHTML="";

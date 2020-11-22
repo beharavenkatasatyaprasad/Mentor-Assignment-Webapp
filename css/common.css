@@ -18,21 +18,19 @@
     font-family: 'Josefin Sans',sans-serif;
 }
 
+body{
+    background-color: gainsboro;
+}
+
+.navbar{
+    background-color: rgb(19, 170, 82);
+}
 
 .nav-buttons{
+    background-color: white;
+    color: black;
     border-radius: 0% !important;
-}
-
-.welcome-page{
-    background: rgba(0, 0, 0, 0.8) !important;
-    color: white;
-}
-.header{
-    color: rgb(203, 32, 45,0.8);
-}
-.welcome-content ol>li{
-    margin: 2%;
-    font-size: 130%;
+    border: 0px solid white;
 }
 
 .input-container{
@@ -87,7 +85,7 @@
 }
 
 .input-container .input-body input.form-control:focus{
-    border-color: rgb(203, 32, 45,0.8);
+    border-color: rgb(19, 170, 82);
 }
 
 .input-container .input-body input.form-control + i{
@@ -107,12 +105,12 @@
 }
 
 .input-container .input-body input.form-control:focus + i{
-    color: rgb(203, 32, 45);
+    color: rgb(19, 170, 82);
 }
 
 
 .input-container .input-body button{
-    background-color:  rgb(203, 32, 45,0.8);
+    background-color:rgb(19, 170, 82);
     border:0px;
     height: 50px;
     letter-spacing: normal;
@@ -127,8 +125,8 @@
 
 .input-body button:hover{
     font-weight: bold;
-    background-color: hsla(210, 10%, 23%, 0.664);
-    color: rgb(203, 32, 45);
+    background-color: hsl(0, 0%, 0%);
+    color: rgb(19, 170, 82);
     letter-spacing: 5px !important;
 }
 
@@ -136,9 +134,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-thead{
-    background-color: rgba(203, 32, 46, 0.678) !important;
-}
+
 
 .students-container{
     background-color: rgb(0, 0, 0);
@@ -146,38 +142,3 @@ thead{
     border-radius: 5%;
 }
 
-.mentorname{
-    font-size: 150%;
-    color: #ffffff;
-    
-    padding: 1px 0px 1px 0px;
-}
-
-.select-options{
-    padding: 0px;
-}
-
-select{
-    text-align: center;
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-}
-
-#selectbtn{
-    background-color: rgba(203, 32, 46);
-    margin:0px;
-    color: white;
-    border-radius: 5px;
-    border: 0px;
-    letter-spacing: normal;
-    transition: all 0.5s;
-}
-
-#selectbtn:hover{
-    background-color:  hsla(210, 10%, 23%, 0.664);
-    letter-spacing: 5px !important;
-}
-
-.AssignModal{
-    z-index: 999;
-}

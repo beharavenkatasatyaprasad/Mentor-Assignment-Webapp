@@ -15,7 +15,6 @@ async function getMentors() {
     })  
 }
 
-console.log(mentors)
 
 async function getStudents() {
     students.splice(0, students.length)
@@ -92,12 +91,13 @@ function UpdateMentorTable(){
                     <th scope="col">Mentor ID</th>
                     <th scope="col">Mentor Name</th>
                     <th scope="col">Mbl Number</th>
+                    <th scope="col">Current Mentor</th>
                     <th scope="col">Update Mentor</th>
     `
     MentorsTable.appendChild(TableHead)
     
-
     students.forEach(student=>{
+        if(student.mentorName === 'Not Assigned'){
         const mentorRow = document.createElement('tr');
         const mentorid = document.createElement('td')
         mentorid.className = 'align-middle';
@@ -111,6 +111,34 @@ function UpdateMentorTable(){
         mentorMbl.className = 'align-middle';
         mentorMbl.innerHTML = student.contact;
         mentorRow.appendChild(mentorMbl);
+        const CurrentMentor = document.createElement('td')
+        CurrentMentor.className = 'align-middle';
+        CurrentMentor.innerHTML = student.mentorName;
+        mentorRow.appendChild(CurrentMentor);
+        const Assigncol = document.createElement('td')
+        Assigncol.innerHTML =  "Not Applicable"
+        mentorRow.appendChild(Assigncol);
+        MentorsTable.appendChild(mentorRow);
+        StudentsTableDiv.appendChild(MentorsTable);
+    }
+    else{
+        const mentorRow = document.createElement('tr');
+        const mentorid = document.createElement('td')
+        mentorid.className = 'align-middle';
+        mentorid.innerHTML = student.id
+        mentorRow.appendChild(mentorid);
+        const mentorName = document.createElement('td')
+        mentorName.className = 'align-middle';
+        mentorName.innerHTML = student.name
+        mentorRow.appendChild(mentorName);
+        const mentorMbl = document.createElement('td')
+        mentorMbl.className = 'align-middle';
+        mentorMbl.innerHTML = student.contact;
+        mentorRow.appendChild(mentorMbl);
+        const CurrentMentor = document.createElement('td')
+        CurrentMentor.className = 'align-middle';
+        CurrentMentor.innerHTML = student.mentorName;
+        mentorRow.appendChild(CurrentMentor);
         const Assigncol = document.createElement('td')
         Assigncol.innerHTML =  `
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SelectModal">
@@ -119,7 +147,7 @@ function UpdateMentorTable(){
         `
         mentorRow.appendChild(Assigncol);
         MentorsTable.appendChild(mentorRow);
-        
+   
         Assigncol.addEventListener('click',()=>{
             const SelectedStudentName = document.getElementById('SelectedStudent');
             SelectedStudentName.style.textTransform = 'capitalize';
@@ -129,8 +157,9 @@ function UpdateMentorTable(){
             document.getElementById('SelectStudentsToAssign').innerHTML='Loading...'
             listStudentsToSelect()
         })
+        StudentsTableDiv.appendChild(MentorsTable);
+    }
     })
-    StudentsTableDiv.appendChild(MentorsTable)
 }
 
 
@@ -154,8 +183,11 @@ function selectedMentor_(mentor){
     selectedmentor = mentor;
     UpdateMentortoStudent();
     custom_alert("success", "Assigned " + `${selectedstudent}` + " to " + `${selectedmentor}` );
-    
-    setTimeout(() => {
-        document.location.href = "./UpdateMentor.html";
-    }, 3500);
+    console.log(oldMentor)
+    console.log(selectedmentor)
+    console.log(selectedstudent)
+    // setTimeout(() => {
+    //     document.location.href = "./UpdateMentor.html";
+    // }, 3500);
 }
+
