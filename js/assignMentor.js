@@ -179,6 +179,6 @@ function selectedStudent_(student){
     addStudenttoMentor();
     custom_alert("success", "Assigned " + `${selectedStudentName}` + " to " + `${selectedmentor}` );
     setTimeout(() => {
-        document.location.href = "./UpdateMentor.html";
+        document.location.href = "./AssignMentor.html";
     }, 3500);
 }
