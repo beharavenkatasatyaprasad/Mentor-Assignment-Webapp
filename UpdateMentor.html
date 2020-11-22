@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentor Assignment</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet">
     <script src="https://use.fontawesome.com/d8a40b24d8.js"></script>
-    <script src="js/common.js" defer></script>
     <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
     <div id="message" class="message text-center col-sm-12 p-0 m-0">
 
     </div>
-    <nav class="navbar shadow navbar-expand-md p-0 m-0" style="background-color:  rgb(203, 32, 45);">
+    <nav class="navbar shadow navbar-expand-md px-3 m-0" style="background-color:  rgb(203, 32, 45);">
         <a class="navbar-brand" href="" style="color:rgb(255, 255, 255);">Mentor Assignment Portal</a>
         <button class="navbar-toggler" id="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <i class="fa fa-bars"></i>
@@ -34,116 +34,16 @@
                     <button  type="button" id="UpdateMentorbtn" class="nav-buttons btn btn-md btn-block btn-secondary">Update Mentor</button>
                 </li>
             </ul>
-        </div>  
+        </div>
     </nav>
-    <div class="container" style="margin-top: 6%;">
-        <div id="addmentor" class="fade-in">
-            <div class="input-container col-lg-8 col-md-12 col-sm-12 col-xs-12" style="position: center center;"> 
-              <div class="input-content">
-                <div class="input-header text-center">
-                  <h2>Update Mentor</h2>
-              </div>
-                <div class="input-body">
-                    <form id="mentorForm" autocomplete="off">
-                        <div class="form-group">
-                            <div class="pos-r">                                        
-                                <input id="MentorId" type="number" name="mentorid" placeholder="Mentor ID Number..." class="form-mentorid form-control" >
-                                <i class="fa fa-id-card"></i>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="pos-r">                                    
-                                <input id="MentorName" type="text" name="MentorName" placeholder="Mentor Name..." class="form-MentorName form-control" >
-                                <i class="fa fa-user"></i>                                       
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="pos-r">                                    
-                                <input id="MentorContact" type="tel" name="ContactNumber" placeholder="Contact Number..." maxlength="10" class="form-ContactNumber form-control" >
-                                <i class="fa fa-phone"></i>                                       
-                            </div>
-                        </div>
-                        <div class="form-group">     
-                            <button type="button" onclick="createMentor()" id="MentorSubmitBtn" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
-                        </div>
-                    </form>
-                  </div>   
-                </div>
-            </div>
-        </div>
-        <div id="addstudent" class="fade-in" style="display: none;">
-            <div class="input-container col-lg-8 col-md-12 col-sm-12 col-xs-12" style="margin: auto;"> 
-              <div class="input-content">
-                <div class="input-header text-center">
-                  <h2>Create Student</h2>
-              </div>
-                <div class="input-body">
-                    <form autocomplete="off" id="Studentform">
-                        <div class="form-group">
-                            <div class="pos-r">                                        
-                                <input   id="studentId" type="number" name="studentId" placeholder="Student ID Number..." class="form-studentId form-control">
-                                <i class="fa fa-id-card"></i>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="pos-r">                                        
-                                <input   id="Batch" type="number" name="Batch" placeholder="Batch..." class="form-Batch form-control">
-                                <i class="fa fa-users"></i>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="pos-r">                                    
-                                <input id="StudentName" type="text" name="StudentName" placeholder="Student Name..." class="form-StudentName form-control">
-                                <i class="fa fa-user"></i>                                       
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="pos-r">                                    
-                                <input id="StudentContact" type="tel" name="ContactNumber" placeholder="Contact Number..." class="form-ContactNumber form-control" maxlength="10">
-                                <i class="fa fa-phone"></i>                                       
-                            </div>
-                        </div>
-                        <div class="form-group">     
-                            <button type="button" id="StudentSubmitBtn" onclick="createStudent()" style=" letter-spacing: 3px;" class="btn btn-primary form-control">Create</button>  
-                        </div>
-                    </form>
-                  </div>   
-                </div>
-            </div>
-        </div>
-        <div id="AssignMentorsField" class="col-sm-12 fade-in table-responsive" style="display: none;">
-            <table class="col-sm-12 table table-hover text-center table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">Mentor ID</th>
-                    <th scope="col">Mentor Name</th>
-                    <th scope="col">Mbl Number</th>
-                    <th scope="col">Add Student</th>
-                  </tr>
-                </thead>
-                <tbody id="MentorsTable">
-                </tbody>
-            </table>
-            <div id="selectGroup" class="students col-sm-12 p-3" style="margin: auto; display: none;">
-                <div class="students-container col-sm-6" style="margin: auto;">
-                    <div class="mentorname col-sm-12 text-center">
-                        Select Student for <span id="SelectedMentor" style="color: red;">Satya</span>
-                    </div>
-                    <div  class="select-options col-sm-12">
-                        <form id='selectGroupForm'>
-                            
-                        </form> 
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div id="ChangeMentorField" class="fade-in" style="display: none;">
+    <div id="Container" class="container-fluid" style="margin-top: 2%;">
+        <div id="UpdateMentorsField" class="col-sm-12 fade-in table-responsive">
+
             
         </div>
     </div>
-    <script src="js/createMentor.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/UpdateMentor.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
