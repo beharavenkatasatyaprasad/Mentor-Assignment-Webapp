@@ -88,8 +88,8 @@ function UpdateMentorTable(){
     MentorsTable.className = 'col-sm-12 table text-center';
     const TableHead = document.createElement('thead');
     TableHead.innerHTML = `
-                    <th scope="col">Mentor ID</th>
-                    <th scope="col">Mentor Name</th>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Student Name</th>
                     <th scope="col">Mbl Number</th>
                     <th scope="col">Current Mentor</th>
                     <th scope="col">Update Mentor</th>
