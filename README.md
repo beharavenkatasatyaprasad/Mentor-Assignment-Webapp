@@ -15,11 +15,11 @@ Click [here](https://mentor-assignment-webapp.netlify.app/) to preview the app i
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/jquery/jquery-original.svg" alt="jquery"></code>
 
 #### Users are able to:
-##### - Add New Mentors to the Database.
-##### - Add New Students to the Database.
-##### - Assign Student to Mentor.
-##### - Update the Mentor for a particular student.
-##### - List all Mentors with their student names.
+- Add New Mentors.
+- Add New Students.
+- Assign Student to Mentor.
+- Update the Mentor for a particular student.
+- List all Mentors with their student names.
 
 ##### Links
  - ``Server Deployment URL: https://mentorassignment.herokuapp.com/``
