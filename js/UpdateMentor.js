@@ -103,10 +103,10 @@ function UpdateMentorTable(){
         mentorid.className = 'align-middle';
         mentorid.innerHTML = student.id
         mentorRow.appendChild(mentorid);
-        const mentorName = document.createElement('td')
-        mentorName.className = 'align-middle';
-        mentorName.innerHTML = student.name
-        mentorRow.appendChild(mentorName);
+        const mentorname = document.createElement('td')
+        mentorname.className = 'align-middle';
+        mentorname.innerHTML = student.name
+        mentorRow.appendChild(mentorname);
         const mentorMbl = document.createElement('td')
         mentorMbl.className = 'align-middle';
         mentorMbl.innerHTML = student.contact;
@@ -127,10 +127,10 @@ function UpdateMentorTable(){
         mentorid.className = 'align-middle';
         mentorid.innerHTML = student.id
         mentorRow.appendChild(mentorid);
-        const mentorName = document.createElement('td')
-        mentorName.className = 'align-middle';
-        mentorName.innerHTML = student.name
-        mentorRow.appendChild(mentorName);
+        const mentorname = document.createElement('td')
+        mentorname.className = 'align-middle';
+        mentorname.innerHTML = student.name
+        mentorRow.appendChild(mentorname);
         const mentorMbl = document.createElement('td')
         mentorMbl.className = 'align-middle';
         mentorMbl.innerHTML = student.contact;
@@ -186,8 +186,8 @@ function selectedMentor_(mentor){
     console.log(oldMentor)
     console.log(selectedmentor)
     console.log(selectedstudent)
-    // setTimeout(() => {
-    //     document.location.href = "./UpdateMentor.html";
-    // }, 3500);
+    setTimeout(() => {
+        document.location.href = "./UpdateMentor.html";
+    }, 3500);
 }
 
