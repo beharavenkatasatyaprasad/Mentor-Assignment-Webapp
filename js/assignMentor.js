@@ -74,7 +74,7 @@ function AssignMentorTable(){
 
     MentorsTableDiv.innerHTML = ''
     const MentorsTable =document.createElement('table');
-    MentorsTable.className = 'col-sm-12 table table-hover text-center table-dark';
+    MentorsTable.className = 'col-sm-12 table table-hover  text-center table-dark';
     const TableHead = document.createElement('thead');
     TableHead.innerHTML = `
                     <th scope="col">Mentor ID</th>
@@ -99,6 +99,10 @@ function AssignMentorTable(){
         mentorMbl.className = 'align-middle';
         mentorMbl.innerHTML = mentor.contact;
         mentorRow.appendChild(mentorMbl);
+        // const noOfStudentsUnder = document.createElement('td')
+        // noOfStudentsUnder.className = 'align-middle';
+        // noOfStudentsUnder.innerHTML = mentor.studentList.length
+        // mentorRow.appendChild(noOfStudentsUnder);
         const Assigncol = document.createElement('td')
         Assigncol.innerHTML =  `
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SelectModal">
@@ -121,22 +125,52 @@ function AssignMentorTable(){
 }
 
 let selectedStudentName
-
+let StudentsWithNoMentors = []
 function listStudentsToSelect(){
     const selectGroupForm = document.getElementById('SelectStudentsToAssign');
     selectGroupForm.innerHTML="";
-    students.forEach(student=>{
-        if(student.mentorAssigned === false){
-            const option = document.createElement("div");
+    if(students.length === 0){
+        const option = document.createElement("div");
+        option.className = 'form-group'
+        option.innerHTML = ` 
+            <button type="button" data-dismiss="modal"  style="letter-spacing: 3px;" class="btn btn-primary form-control">
+                No Students Found
+            </button>
+        `
+        selectGroupForm.appendChild(option);
+    }else{
+        StudentsWithNoMentors.splice(0, StudentsWithNoMentors.length)
+        students.forEach(student=>{
+            if(student.mentorAssigned === false){
+                StudentsWithNoMentors.push(student.name)
+                }
+            }
+         )
+        if(StudentsWithNoMentors.length !== 0){
+            for(let i=0;i<StudentsWithNoMentors.length;i++){
+                const option = document.createElement("div");
                 option.className = 'form-group'
                 option.innerHTML = ` 
-                    <button type="button" data-dismiss="modal" value="${student.name}" id="{student.name}" onclick="selectedStudent_(this.value)" style="letter-spacing: 3px;" class="btn btn-primary form-control">
-                        ${student.name}
+                    <button type="button" data-dismiss="modal" value="${StudentsWithNoMentors[i]}" id="${StudentsWithNoMentors[i]}" onclick="selectedStudent_(this.value)" style="letter-spacing: 3px;" class="btn btn-primary form-control">
+                        ${StudentsWithNoMentors[i]}
                     </button>
                 `
                 selectGroupForm.appendChild(option);
             }
-        })
+
+        }
+        else{
+            const option = document.createElement("div");
+            option.className = 'form-group'
+            option.innerHTML = ` 
+                <button type="button" data-dismiss="modal"  style="letter-spacing: 3px;" class="btn btn-primary form-control">
+                    All Students are Assigned
+                </button>
+            `
+            selectGroupForm.appendChild(option);
+        }
+        
+    }
 }
 
 async function addStudenttoMentor() {
@@ -151,15 +185,12 @@ async function addStudenttoMentor() {
             'Content-Type': 'application/json'
         }
     });
-    custom_alert("success", "Student Successfully Assigned to "+` ${selectedmentor}`+"...");
-    // console.log('success')
 }
 
 function selectedStudent_(student){
     selectedStudentName = student;
-    const message = document.getElementById('message');
-    // console.log(SelStudentName.value)
-    custom_alert("success", "Assigned " + `${selectedStudentName}` + " to " + `${selectedmentor}` );
     addStudenttoMentor();
+    custom_alert("success", "Assigned " + `${selectedStudentName}` + " to " + `${selectedmentor}` );
     getMentors()
+    AssignMentorTable()
 }

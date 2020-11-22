@@ -44,7 +44,6 @@ async function addStudent() {
         })
         Form.reset()
         custom_alert("success", "Student Added Successfully...");
-        getStudents()
     };
     submitBtn.innerHTML="Create"
 }
