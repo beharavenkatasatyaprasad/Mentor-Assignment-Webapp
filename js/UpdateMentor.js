@@ -2,6 +2,8 @@ let mentors = []
 let students = []
 let selectedstudent
 let selectedmentor
+let oldMentor
+
 getMentors()
 
 async function getMentors() {
@@ -122,6 +124,7 @@ function UpdateMentorTable(){
             const SelectedStudentName = document.getElementById('SelectedStudent');
             SelectedStudentName.style.textTransform = 'capitalize';
             SelectedStudentName.innerHTML =  student.name;
+            oldMentor = student.mentorName;
             selectedstudent = student.name;
             document.getElementById('SelectStudentsToAssign').innerHTML='Loading...'
             listStudentsToSelect()
@@ -133,10 +136,11 @@ function UpdateMentorTable(){
 
 async function UpdateMentortoStudent() {
     let data = {
-        mentor: selectedmentor,
-        studentName: selectedstudent
+        NewMentor: selectedmentor,
+        studentName: selectedstudent,
+        OldMentor: oldMentor
     }
-    await fetch('https://mentorassignment.herokuapp.com/mentor/assignStudent', {
+    await fetch('https://mentorassignment.herokuapp.com/mentor/UpdateMentor', {
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -144,6 +148,7 @@ async function UpdateMentortoStudent() {
         }
     });
 }
+
 
 function selectedMentor_(mentor){
     selectedmentor = mentor;
