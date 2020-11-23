@@ -40,7 +40,7 @@ function custom_alert(type, message) {
 
 if ($(window).width() > 350) {
     $(window).scroll(function(){  
-  if ($(this).scrollTop() > 40) {
+  if ($(this).scrollTop() > 60) {
      $('#navbar_top').addClass("fixed-top");
      $('#navbar_top').addClass("fade-in");
     // add padding top to show content behind navbar
