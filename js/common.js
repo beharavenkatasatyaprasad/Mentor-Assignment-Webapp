@@ -17,6 +17,23 @@ document.getElementById('ListMentorsBtn').addEventListener('click',()=>{
   window.location.href = "./listMentors.html";
 })
 
+if ($(window).width() > 350) {
+  $(window).scroll(function(){  
+if ($(this).scrollTop() > 50) {
+   $('#navbar_top').addClass("fixed-top");
+   $('#navbar_top').addClass("fade-in");
+  // add padding top to show content behind navbar
+  $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
+}
+else{
+  $('#navbar_top').removeClass("fixed-top");
+  $('#navbar_top').removeClass("fade-in");	      
+  // remove padding top from body
+  $('body').css('padding-top', '0');
+  }   
+});
+} 
+
 
 function custom_alert(type, message) {
   let newAlert = $("#message");
@@ -38,22 +55,6 @@ function custom_alert(type, message) {
   }, 3000);
 }
 
-if ($(window).width() > 350) {
-    $(window).scroll(function(){  
-  if ($(this).scrollTop() > 60) {
-     $('#navbar_top').addClass("fixed-top");
-     $('#navbar_top').addClass("fade-in");
-    // add padding top to show content behind navbar
-    $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
-  }
-  else{
-    $('#navbar_top').removeClass("fixed-top");
-    $('#navbar_top').removeClass("fade-in");	      
-    // remove padding top from body
-    $('body').css('padding-top', '0');
-    }   
-  });
-} 
 
 var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
