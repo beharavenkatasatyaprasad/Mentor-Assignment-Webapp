@@ -6,7 +6,7 @@ Thanks for checking out this repo [Mentor-Assignment-Webapp](https://github.com/
 
 Click [here](https://mentor-assignment-webapp.netlify.app/) to preview the app in action.
 
-#### Technologies Included for Development:
+#### Technologies & tools Included for Development:
 
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" alt="html5"></code>
 <code><img height="25" src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" alt="css3"></code>
